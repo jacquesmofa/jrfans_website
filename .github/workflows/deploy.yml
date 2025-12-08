@@ -38,7 +38,8 @@ jobs:
           # Deploy the contents of the local 'out' folder (Fixed path from 'dist' to 'out')
           local-dir: ./out/ 
           
-          # 💥 FINAL FIX: Explicitly set the deployment directory to the JRFANS root folder.
-          server-dir: jesusrevivalfans.com/
+          # 💥 FINAL FIX: Since the NEW FTP user is correctly rooted to the document root,
+          # we can now safely use '/' to deploy directly into the folder.
+          server-dir: /
           
           state-name: .ftp-deploy-sync-state.json
