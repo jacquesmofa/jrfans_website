@@ -35,8 +35,8 @@ jobs:
           protocol: ftps
           port: 21
           
-          # Deploy the contents of the local 'dist' folder
-          local-dir: ./dist/ 
+          # Deploy the contents of the local 'out' folder (Fixed path from 'dist' to 'out')
+          local-dir: ./out/ 
           
           # 💥 FINAL, VERIFIED FIX: Deploy to the FTP root directory (/)
           # This forces the files to land in the correct public_html/ folder on HostGator 
