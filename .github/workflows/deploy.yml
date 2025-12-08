@@ -38,9 +38,7 @@ jobs:
           # Deploy the contents of the local 'out' folder (Fixed path from 'dist' to 'out')
           local-dir: ./out/ 
           
-          # 💥 FINAL, VERIFIED FIX: Deploy to the FTP root directory (/)
-          # This forces the files to land in the correct public_html/ folder on HostGator 
-          # without creating any nested subfolders.
-          server-dir: /
+          # 💥 FINAL FIX: Explicitly set the deployment directory to the JRFANS root folder.
+          server-dir: jesusrevivalfans.com/
           
           state-name: .ftp-deploy-sync-state.json
