@@ -24,16 +24,16 @@ jobs:
       - name: 🏗 Build Project
         run: npm run build 
         
-      - name: 📂 Deploy to HostGator via SFTP (Updated Protocol)
+      - name: 📂 Deploy to HostGator via FTP (Simple)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           
-          # 💥 FINAL FIX: Changing to SFTP (SSH File Transfer Protocol) on port 22
-          protocol: sftp
-          port: 22
+          # 💥 FINAL FIX: Changing to simple FTP on port 21
+          protocol: ftp
+          port: 21
           
           # Deploy the contents of the local 'out' folder (Fixed path from 'dist' to 'out')
           local-dir: ./out/ 
