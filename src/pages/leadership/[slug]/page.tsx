@@ -1,0 +1,469 @@
+import { useParams } from 'react-router-dom';
+import Navigation from '../../../components/feature/Navigation';
+import Footer from '../../../components/feature/Footer';
+import StickyActionBar from '../../../components/feature/StickyActionBar';
+import { motion } from 'framer-motion';
+
+export default function LeadershipProfilePage() {
+  const { slug } = useParams();
+
+  const leadershipProfiles: Record<string, any> = {
+    'rev-dr-irine-ashu': {
+      name: 'Rev Dr. Irine Ashu',
+      role: 'Founder & Lead Pastor',
+      image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%20and%20ministry%20leader%2C%20warm%20smile%2C%20spiritual%20authority%2C%20compassionate%20expression%2C%20church%20background%2C%20dignified%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader1&orientation=portrait',
+      bio: 'Rev. Dr. Irine Ashu is the visionary founder and lead pastor of Jesus Revival for All Nations. Called by God at the tender age of 8, she has dedicated her entire life to spreading the gospel and serving communities across nations.',
+      fullStory: [
+        'Rev. Dr. Irine Ashu\'s journey began in her childhood when she experienced a profound calling from God. At just 8 years old, during a church service, she told her father that Jesus was calling him. Her father\'s gentle response—"my daughter, you can answer Jesus if you want to"—changed her life forever.',
+        'From that moment, she walked around telling God to send her and use her to reach many with His love and compassion. Her passion for ministry grew throughout her elementary, secondary, and high school years, where she ministered to peers, staff, and neighborhoods.',
+        'Upon arriving in Canada, Rev. Ashu worked with Toral Cast (a division of Magna) before pursuing studies in community and social services. During her college years, she heard God\'s voice calling her to study His Word more deeply.',
+        'She opened a restaurant, but it gradually transformed into a prayer and counseling house. When she inquired of the Lord about this, He instructed her to study His Word and counsel and revive His people.',
+        'Rev. Ashu attended York University to study psychology, achieving excellent grades despite facing severe financial difficulties. Throughout this time, God persistently told her to "go and study the book that water runs out of."',
+        'After much spiritual wrestling, she heard God\'s clear voice: "Go to school and study my Word for you promised if I send you, you will go." She dropped out of York University and enrolled in World Impact Bible Institute in Toronto, where she graduated with a diploma in Biblical Studies.',
+        'She later acquired Bachelor\'s and Master\'s degrees in Christian Counseling and a PhD in Ministry. During her years at World Impact Bible Institute, she volunteered her home and time teaching children and adults about the Word of Truth.',
+        'Her passion led her to travel to many parts of Africa for the Gospel of Christ. After numerous missionary trips, God instructed her to create a platform where people of all nations and colors would come and worship Him in spirit and truth.',
+        'Thus, Jesus Revival for All Nations was born—a place where people find love, compassion, salvation, fellowship, comfort, and union with their Creator and Father.'
+      ],
+      achievements: [
+        'Founded Jesus Revival for All Nations',
+        'PhD in Ministry',
+        'Master\'s Degree in Christian Counseling',
+        'Bachelor\'s Degree in Christian Counseling',
+        'Diploma in Biblical Studies from World Impact Bible Institute',
+        'Led numerous missionary crusades across Africa',
+        'Established weekly food bank serving 500+ people',
+        'Trained and mentored hundreds of ministry leaders',
+        'Author and teacher of biblical principles'
+      ],
+      ministry: [
+        'Leading powerful worship services and revival meetings',
+        'Overseeing community food bank ministry serving hundreds weekly',
+        'Teaching and preaching the uncompromised Word of God',
+        'Counseling and mentoring believers in their faith journey',
+        'Organizing crusades and outreach programs',
+        'Training and equipping ministry leaders',
+        'Providing spiritual guidance to the JRFAN community'
+      ],
+      quote: 'Here am I. Send me! - Isaiah 6:8'
+    },
+    'brittley-mokube': {
+      name: 'Brittley Mokube',
+      role: 'Executive Director',
+      image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20executive%20director%2C%20confident%20business%20attire%2C%20leadership%20presence%2C%20warm%20and%20approachable%2C%20office%20background%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader2&orientation=portrait',
+      bio: 'Brittley Mokube serves as the Executive Director of JRFAN, bringing exceptional organizational leadership and a heart for community transformation.',
+      fullStory: [
+        'Brittley Mokube is a dynamic leader with a passion for excellence in ministry administration and community service. As Executive Director, she oversees the day-to-day operations of Jesus Revival for All Nations, ensuring that every program and initiative aligns with the church\'s vision and mission.',
+        'With a background in business administration and nonprofit management, Brittley brings strategic thinking and operational excellence to JRFAN. Her leadership has been instrumental in expanding the church\'s community outreach programs, particularly the weekly food bank ministry.',
+        'Brittley\'s heart for service was cultivated through years of volunteering in various community organizations. She witnessed firsthand the transformative power of combining practical assistance with spiritual ministry, which drew her to JRFAN\'s holistic approach to community service.',
+        'Under her leadership, JRFAN has developed strong partnerships with local businesses, food suppliers, and community organizations, enabling the church to serve hundreds of families each week with dignity and compassion.',
+        'Brittley is known for her ability to mobilize volunteers, manage resources efficiently, and create systems that ensure sustainable impact. She works closely with Rev. Dr. Irine Ashu to implement the vision of reaching all nations with the gospel while meeting practical needs in the local community.',
+        'Her commitment to excellence and her genuine love for people make her an invaluable leader in the JRFAN family. She believes that every person who walks through the church doors should experience the love of Christ through both word and deed.'
+      ],
+      achievements: [
+        'Expanded JRFAN\'s food bank to serve 500+ people weekly',
+        'Established partnerships with major food suppliers and donors',
+        'Developed volunteer training and management systems',
+        'Implemented efficient operational procedures',
+        'Led community outreach expansion initiatives',
+        'Coordinated major church events and crusades'
+      ],
+      ministry: [
+        'Overseeing all administrative operations of JRFAN',
+        'Managing the weekly food bank distribution program',
+        'Coordinating volunteer teams and training',
+        'Building community partnerships and relationships',
+        'Strategic planning and resource management',
+        'Supporting pastoral leadership in ministry execution'
+      ],
+      quote: 'Excellence in service is our worship to God'
+    },
+    'pastor-kevin-eemeka': {
+      name: 'Pastor Kevin Eemeka',
+      role: 'Board Member & Associate Pastor',
+      image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20male%20pastor%2C%20kind%20expression%2C%20pastoral%20attire%2C%20spiritual%20leader%2C%20church%20setting%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader3&orientation=portrait',
+      bio: 'Pastor Kevin Eemeka is a devoted servant of God with a powerful teaching ministry and a heart for discipleship and spiritual growth.',
+      fullStory: [
+        'Pastor Kevin Eemeka\'s journey into ministry began with a radical encounter with Jesus Christ that transformed his life completely. From a background of worldly pursuits, he experienced the saving grace of God and immediately felt called to share this life-changing message with others.',
+        'His teaching gift was evident from the early days of his conversion. Pastor Kevin has a unique ability to break down complex biblical truths into practical, applicable lessons that transform lives. His passion for the Word of God is contagious, inspiring many to develop their own hunger for Scripture.',
+        'Before joining JRFAN\'s leadership team, Pastor Kevin served in various ministry capacities, including youth ministry, men\'s fellowship, and Bible study leadership. His experience in these areas has equipped him with a well-rounded understanding of the diverse needs within the body of Christ.',
+        'As a board member, Pastor Kevin provides valuable insight into ministry strategy and spiritual direction. He is particularly passionate about discipleship and ensuring that new believers are properly grounded in their faith and equipped for service.',
+        'Pastor Kevin is also deeply involved in the community service initiatives of JRFAN, regularly volunteering at the food bank and participating in outreach programs. He believes that true Christianity must be demonstrated through both proclamation and practical service.',
+        'His counseling ministry has helped many individuals and families navigate difficult seasons, always pointing them back to the sufficiency of Christ and the power of God\'s Word. Pastor Kevin\'s gentle spirit and wisdom make him a trusted advisor to many in the congregation.'
+      ],
+      achievements: [
+        'Established discipleship training programs',
+        'Led numerous Bible study groups and teaching sessions',
+        'Mentored young ministers and church leaders',
+        'Developed curriculum for new believers\' classes',
+        'Active in community outreach and food bank ministry',
+        'Provided pastoral counseling to hundreds of individuals'
+      ],
+      ministry: [
+        'Teaching and preaching the Word of God',
+        'Leading discipleship and mentorship programs',
+        'Providing pastoral counseling and guidance',
+        'Serving on the JRFAN Board of Directors',
+        'Participating in community service initiatives',
+        'Training and equipping believers for ministry'
+      ],
+      quote: 'The Word of God is alive and powerful, transforming all who receive it'
+    },
+    'pastor-collette-tanyi': {
+      name: 'Pastor Collette Tanyi',
+      role: 'Board Member & Women\'s Ministry Leader',
+      image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%2C%20joyful%20smile%2C%20ministry%20leader%2C%20elegant%20attire%2C%20church%20background%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader4&orientation=portrait',
+      bio: 'Pastor Collette Tanyi is a passionate women\'s ministry leader with a heart for prayer, intercession, and empowering women to fulfill their God-given purpose.',
+      fullStory: [
+        'Pastor Collette Tanyi\'s ministry is marked by a deep commitment to prayer and intercession. She believes that every breakthrough in ministry begins in the place of prayer, and she has dedicated herself to building a strong prayer foundation at JRFAN.',
+        'Her journey into ministry was birthed through personal trials that drove her to her knees in desperate prayer. Through these experiences, she discovered the faithfulness of God and the power of persistent prayer. This testimony has become the foundation of her ministry to women.',
+        'As the leader of JRFAN\'s women\'s ministry, Pastor Collette has created a safe and nurturing environment where women can grow spiritually, find healing, and discover their identity in Christ. Her monthly women\'s gatherings have become powerful times of worship, teaching, and fellowship.',
+        'Pastor Collette is particularly passionate about reaching women who have experienced trauma, abuse, or rejection. Her compassionate approach and personal testimony of God\'s restoration have brought hope and healing to countless women in the Brampton community.',
+        'She also leads the church\'s intercessory prayer team, organizing regular prayer meetings and teaching others how to pray effectively. Under her leadership, JRFAN has developed a strong culture of prayer that undergirds all ministry activities.',
+        'In addition to her spiritual leadership, Pastor Collette is actively involved in the food bank ministry, often personally serving families and praying with those who come for assistance. She sees every interaction as an opportunity to demonstrate God\'s love and share the gospel.'
+      ],
+      achievements: [
+        'Established thriving women\'s ministry at JRFAN',
+        'Led intercessory prayer team and prayer meetings',
+        'Organized women\'s conferences and retreats',
+        'Provided counseling and support to women in crisis',
+        'Developed prayer training curriculum',
+        'Active in community outreach to vulnerable women'
+      ],
+      ministry: [
+        'Leading women\'s ministry programs and events',
+        'Coordinating intercessory prayer initiatives',
+        'Providing pastoral care and counseling to women',
+        'Serving on the JRFAN Board of Directors',
+        'Teaching on prayer, faith, and spiritual warfare',
+        'Mentoring women in ministry leadership'
+      ],
+      quote: 'Prayer is not preparation for the battle; prayer is the battle'
+    },
+    'pastor-bill-jay': {
+      name: 'Pastor Bill Jay The Psalmist',
+      role: 'Worship Leader & Board Member',
+      image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20worship%20leader%20and%20psalmist%2C%20passionate%20expression%2C%20musical%20ministry%2C%20church%20worship%20setting%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader5&orientation=portrait',
+      bio: 'Pastor Bill Jay is an anointed worship leader and psalmist who leads the congregation into powerful encounters with God through worship and praise.',
+      fullStory: [
+        'Pastor Bill Jay, affectionately known as "The Psalmist," has a unique anointing to usher people into the presence of God through worship. His musical gift was evident from childhood, but it was his encounter with Jesus that transformed his talent into a powerful ministry tool.',
+        'Growing up in a musical family, Pastor Bill learned to play multiple instruments and developed his vocal abilities. However, it wasn\'t until he surrendered his life to Christ that he discovered the true purpose of his gift—to lead others into worship and create an atmosphere where God\'s presence can move freely.',
+        'As JRFAN\'s worship leader, Pastor Bill has assembled and trained a talented worship team that ministers with excellence and passion. Under his leadership, worship services at JRFAN have become known for their authenticity, power, and ability to create space for the Holy Spirit to move.',
+        'Pastor Bill\'s approach to worship goes beyond performance; he emphasizes the heart of worship and teaches the congregation to be true worshippers in spirit and truth. His teaching on worship has transformed many people\'s understanding of what it means to worship God.',
+        'Beyond leading Sunday services, Pastor Bill has composed numerous original worship songs that have blessed the JRFAN community and beyond. His songs often reflect the themes of revival, salvation, and God\'s faithfulness that are central to JRFAN\'s message.',
+        'As a board member, Pastor Bill provides valuable perspective on the role of worship in church life and ministry. He is passionate about raising up the next generation of worship leaders and regularly mentors young musicians and singers in the congregation.'
+      ],
+      achievements: [
+        'Established and leads JRFAN worship team',
+        'Composed original worship songs for the church',
+        'Trained and mentored numerous worship leaders',
+        'Led worship at crusades and special events',
+        'Developed worship training curriculum',
+        'Recorded worship albums with JRFAN team'
+      ],
+      ministry: [
+        'Leading worship services and special events',
+        'Training and mentoring worship team members',
+        'Composing and arranging worship music',
+        'Serving on the JRFAN Board of Directors',
+        'Teaching on worship and the presence of God',
+        'Coordinating music ministry activities'
+      ],
+      quote: 'True worship is a lifestyle, not just a song'
+    },
+    'nicole-ashu': {
+      name: 'Nicole Ashu',
+      role: 'Board Member & Youth Ministry Coordinator',
+      image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20young%20African%20woman%20leader%2C%20bright%20smile%2C%20modern%20professional%20attire%2C%20confident%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader6&orientation=portrait',
+      bio: 'Nicole Ashu is a passionate young leader dedicated to reaching and discipling the next generation for Christ through innovative youth ministry programs.',
+      fullStory: [
+        'Nicole Ashu represents the next generation of leadership at JRFAN. Growing up in a ministry family, she witnessed firsthand the power of the gospel to transform lives and communities. This upbringing instilled in her a deep love for God and a passion for ministry.',
+        'Despite her young age, Nicole has demonstrated remarkable maturity and leadership ability. She understands the unique challenges facing young people today and has dedicated herself to creating relevant, engaging ministry programs that meet youth where they are.',
+        'As Youth Ministry Coordinator, Nicole has revitalized JRFAN\'s youth programs, introducing creative teaching methods, social media outreach, and service projects that appeal to young people. Under her leadership, youth attendance and engagement have grown significantly.',
+        'Nicole is particularly passionate about helping young people discover their identity in Christ and their purpose in God\'s kingdom. She regularly organizes youth conferences, retreats, and mentorship programs that equip young believers to live boldly for Christ.',
+        'Her approach to youth ministry emphasizes authenticity, community, and practical application of biblical truth. Nicole creates safe spaces where young people can ask hard questions, work through doubts, and grow in their faith without judgment.',
+        'In addition to her youth ministry role, Nicole is actively involved in the food bank ministry and community outreach programs. She believes in modeling servant leadership and regularly brings youth volunteers to participate in community service activities.'
+      ],
+      achievements: [
+        'Revitalized and expanded JRFAN youth ministry',
+        'Organized successful youth conferences and retreats',
+        'Developed social media outreach strategies',
+        'Created mentorship programs for young believers',
+        'Led youth service projects in the community',
+        'Youngest member of JRFAN Board of Directors'
+      ],
+      ministry: [
+        'Coordinating youth ministry programs and events',
+        'Mentoring and discipling young people',
+        'Serving on the JRFAN Board of Directors',
+        'Leading youth worship and teaching sessions',
+        'Organizing community service projects for youth',
+        'Developing digital and social media ministry strategies'
+      ],
+      quote: 'The next generation is not the church of tomorrow; they are the church of today'
+    },
+    'serah-achi': {
+      name: 'Serah Achi',
+      role: 'Board Member & Community Outreach Director',
+      image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20board%20member%2C%20warm%20expression%2C%20professional%20attire%2C%20leadership%20presence%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader7&orientation=portrait',
+      bio: 'Serah Achi is a compassionate leader who oversees JRFAN\'s community outreach initiatives, ensuring that the love of Christ reaches every corner of Brampton.',
+      fullStory: [
+        'Serah Achi\'s heart for community service was shaped by her own experience of receiving help during a difficult season in her life. When she was struggling financially and emotionally, a local church reached out with practical assistance and spiritual support that changed her trajectory.',
+        'That experience ignited a passion in Serah to be the hands and feet of Jesus to others in need. She joined JRFAN with a vision to expand the church\'s community impact and ensure that no one in Brampton would go without food, hope, or the knowledge of God\'s love.',
+        'As Community Outreach Director, Serah oversees all of JRFAN\'s community service programs, including the weekly food bank, hospital visitations, prison ministry, and partnerships with local organizations. Her organizational skills and compassionate heart make her perfectly suited for this role.',
+        'Serah has established strong relationships with community leaders, government officials, and nonprofit organizations throughout Brampton and the Greater Toronto Area. These partnerships have enabled JRFAN to multiply its impact and serve more people effectively.',
+        'She is particularly passionate about serving seniors and has developed special programs to ensure elderly community members receive not just food assistance but also companionship, prayer, and practical help with daily needs.',
+        'Serah\'s leadership has been instrumental in making JRFAN known throughout Brampton as a church that genuinely cares for the community. Her motto is simple: "Love in action speaks louder than words."'
+      ],
+      achievements: [
+        'Expanded community outreach to serve 500+ weekly',
+        'Established partnerships with local organizations',
+        'Developed senior care and support programs',
+        'Coordinated hospital and prison ministry initiatives',
+        'Created volunteer recruitment and training systems',
+        'Built strong relationships with community leaders'
+      ],
+      ministry: [
+        'Directing all community outreach programs',
+        'Managing food bank operations and volunteers',
+        'Serving on the JRFAN Board of Directors',
+        'Building community partnerships and relationships',
+        'Coordinating hospital and prison ministry visits',
+        'Developing new outreach initiatives'
+      ],
+      quote: 'Love in action speaks louder than words'
+    },
+    'jude-anoma': {
+      name: 'Jude Anoma',
+      role: 'Board Member & Financial Steward',
+      image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20male%20board%20member%2C%20distinguished%20appearance%2C%20business%20attire%2C%20trustworthy%20expression%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader8&orientation=portrait',
+      bio: 'Jude Anoma brings financial expertise and integrity to JRFAN\'s leadership, ensuring responsible stewardship of resources for maximum kingdom impact.',
+      fullStory: [
+        'Jude Anoma is a certified accountant and financial professional who felt called by God to use his expertise in service to the church. He believes that faithful stewardship of resources is a form of worship and a critical component of effective ministry.',
+        'With over 15 years of experience in financial management and nonprofit accounting, Jude brings invaluable expertise to JRFAN\'s board. His commitment to transparency and accountability has helped establish strong financial systems that honor God and build trust with donors and partners.',
+        'Jude\'s journey to JRFAN began when he attended a service and was moved by the church\'s genuine commitment to both spiritual ministry and practical community service. He saw an opportunity to contribute his skills to help the ministry grow sustainably.',
+        'As Financial Steward, Jude oversees all financial operations, budgeting, and reporting for JRFAN. He works closely with leadership to ensure that every dollar is used wisely and that the church maintains financial health while expanding its ministry reach.',
+        'Beyond his financial role, Jude is passionate about teaching biblical principles of stewardship and generosity. He regularly leads workshops on financial management, budgeting, and giving, helping church members develop healthy financial habits.',
+        'Jude\'s integrity and wisdom have been crucial in navigating the financial challenges of running a growing church with extensive community programs. His careful planning and management have enabled JRFAN to serve more people while maintaining financial stability.'
+      ],
+      achievements: [
+        'Established transparent financial systems for JRFAN',
+        'Developed sustainable budgeting and planning processes',
+        'Ensured compliance with nonprofit financial regulations',
+        'Created financial literacy programs for congregation',
+        'Managed growth from small church to major community ministry',
+        'Built donor confidence through accountability and transparency'
+      ],
+      ministry: [
+        'Overseeing all financial operations and reporting',
+        'Serving on the JRFAN Board of Directors',
+        'Providing financial counsel to church leadership',
+        'Teaching biblical stewardship principles',
+        'Managing budgets and financial planning',
+        'Ensuring accountability and transparency'
+      ],
+      quote: 'Faithful stewardship honors God and advances His kingdom'
+    },
+    'minister-marie': {
+      name: 'Minister Marie',
+      role: 'Board Member & Children\'s Ministry Director',
+      image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20minister%2C%20gentle%20smile%2C%20ministry%20attire%2C%20compassionate%20leader%2C%20church%20setting%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader9&orientation=portrait',
+      bio: 'Minister Marie is a dedicated children\'s ministry leader who believes in laying strong spiritual foundations in the hearts of young children.',
+      fullStory: [
+        'Minister Marie\'s calling to children\'s ministry began when she was a Sunday school teacher and witnessed the incredible capacity children have to understand and respond to God\'s love. She realized that investing in children is investing in the future of the church and society.',
+        'With a background in early childhood education and a heart full of love for children, Minister Marie has created a vibrant, engaging children\'s ministry at JRFAN. Her programs are designed to teach biblical truth in age-appropriate, memorable ways that children can understand and apply.',
+        'Minister Marie believes that children are not just the church of tomorrow but are important members of God\'s family today. She treats children with respect and dignity, creating an environment where they feel valued, loved, and heard.',
+        'Under her leadership, JRFAN\'s children\'s ministry has grown significantly, with dedicated programs for different age groups, special events, and family ministry initiatives. She has also trained a team of volunteers who share her passion for reaching children with the gospel.',
+        'Minister Marie is particularly passionate about reaching children from difficult backgrounds and providing them with a safe, loving environment where they can encounter God\'s love. Many children who come through the food bank ministry participate in children\'s programs where they receive spiritual nurture alongside physical provision.',
+        'Her creativity and energy are evident in everything she does, from crafting engaging lessons to organizing fun events that children look forward to. Minister Marie\'s ultimate goal is to see every child at JRFAN develop a personal relationship with Jesus Christ.'
+      ],
+      achievements: [
+        'Established comprehensive children\'s ministry programs',
+        'Trained and equipped children\'s ministry volunteers',
+        'Developed age-appropriate curriculum and resources',
+        'Organized successful children\'s events and camps',
+        'Created family ministry initiatives',
+        'Reached hundreds of children with the gospel'
+      ],
+      ministry: [
+        'Directing all children\'s ministry programs',
+        'Serving on the JRFAN Board of Directors',
+        'Training children\'s ministry volunteers',
+        'Developing curriculum and teaching materials',
+        'Organizing children\'s events and activities',
+        'Providing spiritual nurture to children and families'
+      ],
+      quote: 'Train up a child in the way he should go, and when he is old he will not depart from it'
+    }
+  };
+
+  const profile = leadershipProfiles[slug || ''];
+
+  if (!profile) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navigation />
+        <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+          <h1 className="text-4xl font-bold text-primary-900 mb-4">Profile Not Found</h1>
+          <a href="/about" className="text-accent-fire hover:underline">Return to About Page</a>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Navigation />
+      <StickyActionBar />
+
+      {/* Hero Section */}
+      <section className="relative h-96 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${profile.image})`
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-700/80"></div>
+        </div>
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-white"
+            >
+              <p className="text-accent-gold font-bold text-lg mb-2">LEADERSHIP PROFILE</p>
+              <h1 className="font-display font-black text-5xl sm:text-6xl mb-4">
+                {profile.name}
+              </h1>
+              <p className="text-2xl font-semibold">{profile.role}</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Profile Content */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="sticky top-24"
+              >
+                <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
+                  <img
+                    src={profile.image}
+                    alt={profile.name}
+                    className="w-full h-96 object-cover object-top"
+                  />
+                  <div className="p-6">
+                    <h3 className="font-display font-bold text-2xl text-primary-900 mb-2">
+                      {profile.name}
+                    </h3>
+                    <p className="text-accent-fire font-semibold mb-4">{profile.role}</p>
+                    <p className="text-gray-700 italic">"{profile.quote}"</p>
+                  </div>
+                </div>
+
+                <a
+                  href="/about"
+                  className="inline-flex items-center px-6 py-3 bg-primary-900 text-white font-bold rounded-lg hover:bg-primary-800 transition-all whitespace-nowrap cursor-pointer w-full justify-center"
+                >
+                  <i className="ri-arrow-left-line text-xl mr-2"></i>
+                  Back to About
+                </a>
+              </motion.div>
+            </div>
+
+            {/* Main Content */}
+            <div className="lg:col-span-2">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                {/* Bio */}
+                <div className="mb-12">
+                  <h2 className="font-display font-bold text-3xl text-primary-900 mb-6">
+                    About {profile.name.split(' ')[0]}
+                  </h2>
+                  <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                    {profile.bio}
+                  </p>
+                </div>
+
+                {/* Full Story */}
+                <div className="mb-12">
+                  <h2 className="font-display font-bold text-3xl text-primary-900 mb-6">
+                    Ministry Journey
+                  </h2>
+                  <div className="space-y-6">
+                    {profile.fullStory.map((paragraph: string, index: number) => (
+                      <p key={index} className="text-lg text-gray-700 leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Achievements */}
+                <div className="mb-12">
+                  <h2 className="font-display font-bold text-3xl text-primary-900 mb-6">
+                    Key Achievements
+                  </h2>
+                  <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8 shadow-lg">
+                    <ul className="space-y-4">
+                      {profile.achievements.map((achievement: string, index: number) => (
+                        <li key={index} className="flex items-start">
+                          <i className="ri-check-double-line text-2xl text-accent-fire mr-3 mt-1"></i>
+                          <span className="text-lg text-gray-700">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Ministry Focus */}
+                <div className="mb-12">
+                  <h2 className="font-display font-bold text-3xl text-primary-900 mb-6">
+                    Ministry Focus
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {profile.ministry.map((focus: string, index: number) => (
+                      <div
+                        key={index}
+                        className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all"
+                      >
+                        <div className="flex items-start">
+                          <div className="w-10 h-10 flex items-center justify-center bg-accent-fire rounded-lg mr-4 flex-shrink-0">
+                            <i className="ri-heart-fill text-xl text-white"></i>
+                          </div>
+                          <p className="text-gray-700 font-medium">{focus}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Quote Card */}
+                <div className="bg-gradient-to-r from-primary-900 to-primary-700 rounded-2xl p-8 text-white text-center">
+                  <i className="ri-double-quotes-l text-5xl text-accent-gold/50 mb-4 block"></i>
+                  <p className="text-2xl font-bold mb-4">"{profile.quote}"</p>
+                  <p className="text-lg opacity-90">- {profile.name}</p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
