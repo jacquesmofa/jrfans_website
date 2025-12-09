@@ -25,24 +25,23 @@ jobs:
       - name: 🏗 Build Project
         run: npm run build 
         
-      - name: 📂 Deploy to HostGator via FTPS (Timeout Increase)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: 📂 Deploy to HostGator via SCP (Secure Copy Protocol)
+        # 💥 FINAL CRITICAL FIX: Switched to the reliable 'appleboy/scp-action'
+        # This uses the SSH protocol (Port 22), matching your cPanel environment.
+        uses: appleboy/scp-action@master
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           
-          # CRITICAL FIX 1: Reverting to supported protocol FTPS (port 21)
-          protocol: ftps
-          port: 21
+          # Use port 22 for SCP/SSH
+          port: 22
           
-          # CRITICAL FIX 2: Increase timeout to 120 seconds (120000ms) to bypass connection timeout issue
-          timeout: 120000
+          # Source files to deploy (the contents of the 'out' folder)
+          source: "./out/*"
           
-          # Local folder created by 'npm run build'
-          local-dir: ./out/ 
+          # Target path in your HostGator account
+          target: /home3/irineashu/jesusrevivalfans.com/
           
-          # CRITICAL FIX 3: Clean absolute path (no brackets or Markdown syntax)
-          server-dir: /home3/irineashu/jesusrevivalfans.com/
-          
-          state-name: .ftp-deploy-sync-state.json
+          # Setting a high connection timeout just in case (in seconds)
+          timeout: 120s
