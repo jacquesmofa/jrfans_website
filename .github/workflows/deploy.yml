@@ -24,14 +24,16 @@ jobs:
       - name: 🏗 Build Project
         run: npm run build 
         
-      # 💥 FINAL FIX: Switch to appleboy/scp-action for reliable SFTP deployment
-      - name: 📂 Deploy to HostGator via SFTP (Port 22)
+      # 💥 FINAL FIX: Switched to SSH Key for authentication to bypass strict firewall
+      - name: 📂 Deploy to HostGator via SFTP (Port 22, SSH Key Auth)
         uses: appleboy/scp-action@v0.1.7
         with:
-          # Use the FTP credentials (which are also often valid for SFTP)
+          # Use the Hostname/IP
           host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          
+          # 🚨 CRITICAL CHANGE: Use the SSH Private Key instead of the password
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           
           # Explicitly set port 22 for SFTP/SCP
           port: 22 
@@ -39,9 +41,8 @@ jobs:
           # The source files to upload (the build output)
           source: "out/*" 
           
-          # 🚨 ABSOLUTE PATH MANDATORY FOR SCP: Target the full, absolute path
+          # ABSOLUTE PATH MANDATORY FOR SCP
           target: /home3/irineashu/jesusrevivalfans.com
           
-          # Commands to run after deployment (optional, but good for cleanup)
           strip_components: 0
           rm: true
