@@ -6,8 +6,8 @@ on:
       - main 
 
 jobs:
-  build-and-package:
-    name: Build & Package Artifact
+  web-deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
@@ -24,12 +24,22 @@ jobs:
       - name: 🏗 Build Project
         run: npm run build 
         
-      # 💥 FINAL STEP: Save the build output as a downloadable artifact
-      - name: 💾 Upload Build Artifact
-        uses: actions/upload-artifact@v4
+      - name: 📂 Deploy to HostGator via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          name: jesusrevivalfans-website-build
-          # The local directory containing the final website files
-          path: ./out/ 
-          # The retention period (optional)
-          retention-days: 7
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          
+          # Use FTPS (secure) on port 21 (Standard for HostGator)
+          protocol: ftps
+          port: 21
+          
+          # Deploy the contents of the local 'out' folder
+          local-dir: ./out/ 
+          
+          # 💥 FINAL FIX: Use the full absolute path from the cPanel home directory
+          # The cPanel user's home directory is /home3/irineashu/
+          server-dir: /home3/irineashu/[jesusrevivalfans.com/](https://jesusrevivalfans.com/)
+          
+          state-name: .ftp-deploy-sync-state.json
