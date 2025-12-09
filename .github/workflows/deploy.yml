@@ -25,21 +25,21 @@ jobs:
       - name: 🏗 Build Project
         run: npm run build 
         
-      - name: 📂 Deploy to HostGator via FTPS
+      - name: 📂 Deploy to HostGator via SFTP (Protocol Switch)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           
-          # Use FTPS (secure) on port 21 (Standard for HostGator)
-          protocol: ftps
-          port: 21
+          # 💥 CRITICAL FIX 1: Switched from FTPS (21) to SFTP (22) to resolve the Timeout error
+          protocol: sftp
+          port: 22
           
           # Deploy the contents of the local 'out' folder
           local-dir: ./out/ 
           
-          # 💥 FINAL FIX: Use the full absolute path to target the Document Root (Clean Path)
+          # ✅ CRITICAL FIX 2: Removed broken Markdown link syntax (no brackets/parentheses)
           server-dir: /home3/irineashu/jesusrevivalfans.com/
           
           state-name: .ftp-deploy-sync-state.json
