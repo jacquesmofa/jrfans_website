@@ -40,6 +40,6 @@ jobs:
           local-dir: ./out/ 
           
           # 💥 FINAL FIX: Use the full absolute path to target the Document Root (Clean Path)
-          server-dir: /home3/irineashu/[jesusrevivalfans.com/](https://jesusrevivalfans.com/)
+          server-dir: /home3/irineashu/jesusrevivalfans.com/
           
           state-name: .ftp-deploy-sync-state.json
