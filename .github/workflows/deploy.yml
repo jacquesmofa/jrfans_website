@@ -19,7 +19,8 @@ jobs:
           node-version: '20' 
 
       - name: 📦 Install dependencies
-        run: npm install
+        # 💥 CRITICAL FIX: Add --force to bypass React dependency conflicts
+        run: npm install --force
 
       - name: 🏗 Build Project
         run: npm run build 
@@ -38,8 +39,7 @@ jobs:
           # Deploy the contents of the local 'out' folder
           local-dir: ./out/ 
           
-          # 💥 FINAL FIX: Use the full absolute path from the cPanel home directory
-          # The cPanel user's home directory is /home3/irineashu/
+          # 💥 FINAL FIX: Use the full absolute path to target the Document Root
           server-dir: /home3/irineashu/[jesusrevivalfans.com/](https://jesusrevivalfans.com/)
           
           state-name: .ftp-deploy-sync-state.json
