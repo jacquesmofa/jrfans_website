@@ -6,8 +6,8 @@ on:
       - main 
 
 jobs:
-  web-deploy:
-    name: Deploy
+  build-and-package:
+    name: Build & Package Artifact
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
@@ -24,36 +24,12 @@ jobs:
       - name: 🏗 Build Project
         run: npm run build 
         
-      # 💥 FINAL FIX: Use generic SSH command to bypass firewall timeout issues
-      - name: 📂 Deploy to HostGator via Direct SSH/SCP
-        uses: appleboy/ssh-action@v1.0.3
+      # 💥 FINAL STEP: Save the build output as a downloadable artifact
+      - name: 💾 Upload Build Artifact
+        uses: actions/upload-artifact@v4
         with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22 
-          
-          # CRITICAL STEP: Use SCP to copy files directly from the build folder to the target
-          # We use the absolute path /home3/irineashu/jesusrevivalfans.com
-          # We need to use the CPanel username (irineashu), which may be different from the FTP_USERNAME
-          # Note: HostGator often maps the SFTP username to the cPanel username for SSH/SCP commands.
-          # If the command below fails, try replacing 'irineashu' with ${{ secrets.FTP_USERNAME }}
-          script: |
-            # 1. Zip the build output for faster transfer
-            tar -czf site_build.tar.gz -C ./out .
-            
-            # 2. Upload the zipped file
-            # This is automatically handled by the SSH action's 'script' execution context.
-            # We assume 'site_build.tar.gz' is accessible.
-            
-            # 3. Securely transfer the file to the host and extract it
-            # The SSH action copies the files and runs the script remotely.
-            # We use rsync here for a robust copy, but let's try the direct command first.
-            
-            # Use 'rsync' for reliable transfer (rsync needs to be available on the remote server)
-            # This action requires the "source" input to be set, but we are using the "script" input.
-            
-            # Let's switch back to the original appleboy/scp-action and enable debugging to see the true error.
-            # The fact that it fails with two different actions suggests a hard block.
-            
-            echo "SSH Key is active, but server is blocking connection. Must enable debug logs."
+          name: jesusrevivalfans-website-build
+          # The local directory containing the final website files
+          path: ./out/ 
+          # The retention period (optional)
+          retention-days: 7
