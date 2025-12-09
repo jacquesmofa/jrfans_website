@@ -39,7 +39,7 @@ jobs:
           # Deploy the contents of the local 'out' folder
           local-dir: ./out/ 
           
-          # 💥 FINAL FIX: Use the full absolute path to target the Document Root
+          # 💥 FINAL FIX: Use the full absolute path to target the Document Root (Clean Path)
           server-dir: /home3/irineashu/[jesusrevivalfans.com/](https://jesusrevivalfans.com/)
           
           state-name: .ftp-deploy-sync-state.json
