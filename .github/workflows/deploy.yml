@@ -19,27 +19,27 @@ jobs:
           node-version: '20' 
 
       - name: 📦 Install dependencies
-        # 💥 CRITICAL FIX: Add --force to bypass React dependency conflicts
+        # FIX: Added --force to resolve React dependency conflicts during install
         run: npm install --force
 
       - name: 🏗 Build Project
         run: npm run build 
         
-      - name: 📂 Deploy to HostGator via SFTP (Protocol Switch)
+      - name: 📂 Deploy to HostGator via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           
-          # 💥 CRITICAL FIX 1: Switched from FTPS (21) to SFTP (22) to resolve the Timeout error
+          # CRITICAL FIX 1: Switched to SFTP (SSH-based) on port 22, required by HostGator
           protocol: sftp
           port: 22
           
-          # Deploy the contents of the local 'out' folder
+          # Local folder created by 'npm run build'
           local-dir: ./out/ 
           
-          # ✅ CRITICAL FIX 2: Removed broken Markdown link syntax (no brackets/parentheses)
+          # CRITICAL FIX 2: Clean absolute path (no brackets or Markdown syntax)
           server-dir: /home3/irineashu/jesusrevivalfans.com/
           
           state-name: .ftp-deploy-sync-state.json
