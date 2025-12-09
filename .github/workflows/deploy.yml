@@ -24,22 +24,24 @@ jobs:
       - name: 🏗 Build Project
         run: npm run build 
         
-      - name: 📂 Deploy to HostGator via FTP (Simple)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      # 💥 FINAL FIX: Switch to appleboy/scp-action for reliable SFTP deployment
+      - name: 📂 Deploy to HostGator via SFTP (Port 22)
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          # Use the FTP credentials (which are also often valid for SFTP)
+          host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           
-          # 💥 FINAL FIX: Changing to simple FTP on port 21
-          protocol: ftp
-          port: 21
+          # Explicitly set port 22 for SFTP/SCP
+          port: 22 
           
-          # Deploy the contents of the local 'out' folder (Fixed path from 'dist' to 'out')
-          local-dir: ./out/ 
+          # The source files to upload (the build output)
+          source: "out/*" 
           
-          # Since the NEW FTP user is correctly rooted to the document root,
-          # we safely use '/' to deploy directly into the folder.
-          server-dir: /
+          # 🚨 ABSOLUTE PATH MANDATORY FOR SCP: Target the full, absolute path
+          target: /home3/irineashu/jesusrevivalfans.com
           
-          state-name: .ftp-deploy-sync-state.json
+          # Commands to run after deployment (optional, but good for cleanup)
+          strip_components: 0
+          rm: true
