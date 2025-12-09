@@ -25,21 +25,24 @@ jobs:
       - name: 🏗 Build Project
         run: npm run build 
         
-      - name: 📂 Deploy to HostGator via SFTP
+      - name: 📂 Deploy to HostGator via FTPS (Timeout Increase)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           
-          # CRITICAL FIX 1: Switched to SFTP (SSH-based) on port 22, required by HostGator
-          protocol: sftp
-          port: 22
+          # CRITICAL FIX 1: Reverting to supported protocol FTPS (port 21)
+          protocol: ftps
+          port: 21
+          
+          # CRITICAL FIX 2: Increase timeout to 120 seconds (120000ms) to bypass connection timeout issue
+          timeout: 120000
           
           # Local folder created by 'npm run build'
           local-dir: ./out/ 
           
-          # CRITICAL FIX 2: Clean absolute path (no brackets or Markdown syntax)
+          # CRITICAL FIX 3: Clean absolute path (no brackets or Markdown syntax)
           server-dir: /home3/irineashu/jesusrevivalfans.com/
           
           state-name: .ftp-deploy-sync-state.json
