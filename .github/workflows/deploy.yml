@@ -3,7 +3,6 @@ name: Deploy JRFANS React App to HostGator
 on:
   push:
     branches:
-      # This workflow runs only when code is pushed to the 'main' branch
       - main 
 
 jobs:
@@ -12,50 +11,43 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # Step 1: Check out the latest code from the repository
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      # Step 2: Set up the correct Node.js environment
       - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20' 
 
-      # Step 3: Install all project dependencies
       - name: 📦 Install dependencies
         run: npm install
 
-      # Step 4: Build the React project, which generates the 'out' folder
       - name: 🏗 Build Project
+        # Assuming your build script outputs to the 'out' directory
         run: npm run build 
         
-      # Step 5: Securely deploy the 'out' folder contents to HostGator using standard FTP (Port 21)
       - name: 📂 Deploy 'out' folder contents to HostGator via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          # Your SFTP/SSH Host Name (using the confirmed IP address)
+          # --- CRITICAL FIX: Set the working directory to the 'out' folder ---
+          # This tells the action to treat the 'out' folder as its starting point.
+          working-directory: out/ 
+          # -------------------------------------------------------------------
+          
           server: ${{ secrets.HOSTGATOR_HOST }} 
-          
-          # Your dedicated FTP Username (set in GitHub secrets)
           username: ${{ secrets.HOSTGATOR_USERNAME }}
-          
-          # Your FTP Password (set in GitHub secrets)
           password: ${{ secrets.HOSTGATOR_PASSWORD }}
-          
-          # Use standard FTP Port 21 (This fixed the timeout issue)
           port: 21
           
-          # Source: Deploy ALL files and subfolders INSIDE the local 'out' directory
-          source: out/ 
+          # Source: Now we just point to the root of the working directory
+          source: .
           
-          # Target: The specific live directory on your HostGator account
+          # Target: The live website root
           to: /home3/irineashu/jesusrevivalforallnations.com/
           
-          # This deletes files on the server that are not in the 'out' folder, ensuring a clean deployment.
+          # This will now ensure ONLY files from the 'out' folder remain on the server.
           delete-local: true 
           
-          # Exclude non-essential files from the upload
           exclude: |
             **/.git*
             **/.git*/**
