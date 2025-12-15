@@ -3,6 +3,7 @@ name: Deploy JRFANS React App to HostGator
 on:
   push:
     branches:
+      # This workflow runs only when code is pushed to the 'main' branch
       - main 
 
 jobs:
@@ -26,7 +27,7 @@ jobs:
         run: npm run build 
         
       - name: 📂 Deploy 'out' folder contents to HostGator via FTP
-        # We must use the input names that SamKirkland/FTP-Deploy-Action expects!
+        # Uses the correct action for FTP deployment
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.HOSTGATOR_HOST }} 
@@ -34,17 +35,19 @@ jobs:
           password: ${{ secrets.HOSTGATOR_PASSWORD }}
           port: 21
           
-          # 1. FIX: Changed 'source' to 'local-dir' and point it to the 'out' folder
+          # CRITICAL: This points the local source to the built 'out' folder
           local-dir: out/
           
-          # 2. FIX: Changed 'to' to 'server-dir' and point it to the live root
+          # CRITICAL: This points the server destination to the live root
           server-dir: /home3/irineashu/jesusrevivalforallnations.com/
           
-          # 3. FIX: Use 'dangerous-clean-slate' to enforce a clean deployment
-          # This forces the server to match *exactly* what's in your local-dir (out/)
-          dangerous-clean-slate: true 
+          # IMPORTANT: The crashing 'dangerous-clean-slate' is removed.
+          # The action will now use its default, reliable sync logic:
+          # 1. Overwrite changed files.
+          # 2. Upload new files.
+          # 3. Delete old/stale files (from previous build hashes).
           
-          # 4. Exclude unnecessary folders (optional, but good practice)
+          # Exclude non-essential files from the upload
           exclude: |
             **/.git*
             **/.git*/**
