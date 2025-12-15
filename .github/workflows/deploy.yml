@@ -37,15 +37,14 @@ jobs:
           # CRITICAL: local-dir targets the contents of your built folder
           local-dir: out/
           
-          # CRITICAL FINAL FIX: Setting server-dir to "" targets the FTP user's
-          # default login directory, which is your website's root on HostGator.
+          # CRITICAL FINAL FIX: Targets the FTP user's root directory
           server-dir: "" 
           
-          # This relies on the action's robust default sync to overwrite, upload, and delete
-          # stale files automatically, without crashing.
-          
-          # Exclude non-essential files from the upload
+          # EXCLUDE: Tell the deploy tool to ignore these folders on the server during cleanup,
+          # preventing the 550 FTPError. The files within them are already deleted or overwritten.
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
+            out/ 
+            src/
