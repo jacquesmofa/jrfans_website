@@ -32,7 +32,6 @@ jobs:
         
       # Step 5: Securely deploy the 'out' folder contents to HostGator using standard FTP (Port 21)
       - name: 📂 Deploy 'out' folder contents to HostGator via FTP
-        # Switched to SamKirkland/FTP-Deploy-Action for reliable FTP connection
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           # Your SFTP/SSH Host Name (using the confirmed IP address)
@@ -44,7 +43,7 @@ jobs:
           # Your FTP Password (set in GitHub secrets)
           password: ${{ secrets.HOSTGATOR_PASSWORD }}
           
-          # Use standard FTP Port 21 (This should fix the timeout issue)
+          # Use standard FTP Port 21 (This fixed the timeout issue)
           port: 21
           
           # Source: Deploy ALL files and subfolders INSIDE the local 'out' directory
