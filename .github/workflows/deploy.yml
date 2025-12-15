@@ -3,7 +3,6 @@ name: Deploy JRFANS React App to HostGator
 on:
   push:
     branches:
-      # This workflow runs only when code is pushed to the 'main' branch
       - main 
 
 jobs:
@@ -35,17 +34,15 @@ jobs:
           password: ${{ secrets.HOSTGATOR_PASSWORD }}
           port: 21
           
-          # CRITICAL: This points the local source to the built 'out' folder
+          # CRITICAL: local-dir targets the contents of your built folder
           local-dir: out/
           
-          # CRITICAL: This points the server destination to the live root
-          server-dir: /
+          # CRITICAL FINAL FIX: Setting server-dir to "" targets the FTP user's
+          # default login directory, which is your website's root on HostGator.
+          server-dir: "" 
           
-          # IMPORTANT: The crashing 'dangerous-clean-slate' is removed.
-          # The action will now use its default, reliable sync logic:
-          # 1. Overwrite changed files.
-          # 2. Upload new files.
-          # 3. Delete old/stale files (from previous build hashes).
+          # This relies on the action's robust default sync to overwrite, upload, and delete
+          # stale files automatically, without crashing.
           
           # Exclude non-essential files from the upload
           exclude: |
