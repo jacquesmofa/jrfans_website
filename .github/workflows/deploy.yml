@@ -28,36 +28,36 @@ jobs:
 
       # Step 4: Build the React project, which generates the 'out' folder
       - name: 🏗 Build Project
-        # This assumes you have 'build' script defined in your package.json 
-        # that generates the static files into the 'out' directory.
         run: npm run build 
         
-      # Step 5: Securely deploy the 'out' folder contents to HostGator using SCP
-      - name: 📂 Deploy 'out' folder contents to HostGator
-        # We use appleboy/scp-action for secure transfer via SSH/SCP (Port 22)
-        uses: appleboy/scp-action@master
+      # Step 5: Securely deploy the 'out' folder contents to HostGator using standard FTP (Port 21)
+      - name: 📂 Deploy 'out' folder contents to HostGator via FTP
+        # Switched to SamKirkland/FTP-Deploy-Action for reliable FTP connection
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          # Your SFTP/SSH Host Name (e.g., gospellanemedia.com)
-          host: ${{ secrets.HOSTGATOR_HOST }} 
+          # Your SFTP/SSH Host Name (using the confirmed IP address)
+          server: ${{ secrets.HOSTGATOR_HOST }} 
           
-          # Your dedicated FTP Username (e.g., jrfansdeploy@jesusrevivalforallnations.com)
+          # Your dedicated FTP Username (set in GitHub secrets)
           username: ${{ secrets.HOSTGATOR_USERNAME }}
           
-          # Your FTP Password (stored securely in GitHub Secrets)
+          # Your FTP Password (set in GitHub secrets)
           password: ${{ secrets.HOSTGATOR_PASSWORD }}
           
-          # HostGator uses port 22 for secure SSH/SCP access
-          port: 22
+          # Use standard FTP Port 21 (This should fix the timeout issue)
+          port: 21
           
           # Source: Deploy ALL files and subfolders INSIDE the local 'out' directory
-          source: "./out/**" 
+          source: out/ 
           
           # Target: The specific live directory on your HostGator account
-          target: /home3/irineashu/jesusrevivalforallnations.com/
+          to: /home3/irineashu/jesusrevivalforallnations.com/
           
-          # Command to clean the target directory before copying new files
-          # This prevents old, deleted files from remaining on the server.
-          rm: true 
+          # This deletes files on the server that are not in the 'out' folder, ensuring a clean deployment.
+          delete-local: true 
           
-          # Set a timeout for large transfers
-          timeout: 120s
+          # Exclude non-essential files from the upload
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
