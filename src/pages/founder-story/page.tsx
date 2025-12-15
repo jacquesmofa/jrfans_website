@@ -9,7 +9,7 @@ export default function FounderStoryPage() {
         <div className="absolute inset-0">
           <img
             src="https://readdy.ai/api/search-image?query=open%20holy%20bible%20with%20divine%20light%20rays%20shining%20from%20pages%2C%20spiritual%20illumination%20and%20calling%2C%20God%20word%20bringing%20hope%20and%20direction%2C%20inspiring%20faith%20scene%2C%20ultra%20high%20definition%208k%20photography&width=1920&height=1080&seq=founderstoryhero&orientation=landscape"
-            alt="Founder Story Hero"
+            alt="Lead Pastor's Story Hero"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>

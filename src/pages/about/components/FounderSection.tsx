@@ -14,7 +14,7 @@ export default function FounderSection() {
         >
           <p className="text-accent-fire font-bold text-lg mb-2">GOD'S CALLING</p>
           <h2 className="font-display font-black text-4xl sm:text-5xl text-primary-900 mb-4">
-            The Founder's Story
+            The Lead Pasto's Story
           </h2>
           <p className="text-xl text-gray-600 italic">
             "Before I formed you in the womb I knew you" - Jeremiah 1:5
