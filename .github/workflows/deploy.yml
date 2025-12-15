@@ -23,31 +23,28 @@ jobs:
         run: npm install
 
       - name: 🏗 Build Project
-        # Assuming your build script outputs to the 'out' directory
         run: npm run build 
         
       - name: 📂 Deploy 'out' folder contents to HostGator via FTP
+        # We must use the input names that SamKirkland/FTP-Deploy-Action expects!
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          # --- CRITICAL FIX: Set the working directory to the 'out' folder ---
-          # This tells the action to treat the 'out' folder as its starting point.
-          working-directory: out/ 
-          # -------------------------------------------------------------------
-          
           server: ${{ secrets.HOSTGATOR_HOST }} 
           username: ${{ secrets.HOSTGATOR_USERNAME }}
           password: ${{ secrets.HOSTGATOR_PASSWORD }}
           port: 21
           
-          # Source: Now we just point to the root of the working directory
-          source: .
+          # 1. FIX: Changed 'source' to 'local-dir' and point it to the 'out' folder
+          local-dir: out/
           
-          # Target: The live website root
-          to: /home3/irineashu/jesusrevivalforallnations.com/
+          # 2. FIX: Changed 'to' to 'server-dir' and point it to the live root
+          server-dir: /home3/irineashu/jesusrevivalforallnations.com/
           
-          # This will now ensure ONLY files from the 'out' folder remain on the server.
-          delete-local: true 
+          # 3. FIX: Use 'dangerous-clean-slate' to enforce a clean deployment
+          # This forces the server to match *exactly* what's in your local-dir (out/)
+          dangerous-clean-slate: true 
           
+          # 4. Exclude unnecessary folders (optional, but good practice)
           exclude: |
             **/.git*
             **/.git*/**
