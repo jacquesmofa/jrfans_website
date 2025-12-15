@@ -39,7 +39,7 @@ jobs:
           local-dir: out/
           
           # CRITICAL: This points the server destination to the live root
-          server-dir: /home3/irineashu/jesusrevivalforallnations.com/
+          server-dir: /
           
           # IMPORTANT: The crashing 'dangerous-clean-slate' is removed.
           # The action will now use its default, reliable sync logic:
