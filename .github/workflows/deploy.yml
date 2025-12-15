@@ -41,7 +41,7 @@ jobs:
           # CRITICAL FINAL FIX: Targets the FTP user's root directory, which is your website's folder
           server-dir: "" 
           
-          # FINAL FIX: Exclude the entire source code tree from sync.
+          # FINAL FIX: Exclde the entire source code tree from sync.
           # This bypasses the FTP 550 permission errors that crash the job 
           # by preventing the tool from trying to delete these sensitive folders.
           exclude: |
