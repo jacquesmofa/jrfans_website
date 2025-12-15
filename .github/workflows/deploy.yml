@@ -3,6 +3,7 @@ name: Deploy JRFANS React App to HostGator
 on:
   push:
     branches:
+      # This workflow runs only when code is pushed to the 'main' branch
       - main 
 
 jobs:
@@ -37,14 +38,14 @@ jobs:
           # CRITICAL: local-dir targets the contents of your built folder
           local-dir: out/
           
-          # CRITICAL FINAL FIX: Targets the FTP user's root directory
+          # CRITICAL FINAL FIX: Targets the FTP user's root directory, which is your website's folder
           server-dir: "" 
           
-          # EXCLUDE: Tell the deploy tool to ignore these folders on the server during cleanup,
-          # preventing the 550 FTPError. The files within them are already deleted or overwritten.
+          # FINAL FIX: Exclude the entire source code tree from sync.
+          # This bypasses the FTP 550 permission errors that crash the job 
+          # by preventing the tool from trying to delete these sensitive folders.
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
-            out/ 
-            src/
+            src/** out/**
