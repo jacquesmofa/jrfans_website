@@ -1,47 +1,63 @@
-name: Deploy React App to HostGator
+name: Deploy JRFANS React App to HostGator
 
 on:
   push:
     branches:
+      # This workflow runs only when code is pushed to the 'main' branch
       - main 
 
 jobs:
   web-deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    
     steps:
+      # Step 1: Check out the latest code from the repository
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
+      # Step 2: Set up the correct Node.js environment
       - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20' 
 
+      # Step 3: Install all project dependencies
       - name: 📦 Install dependencies
-        # FIX: Added --force to resolve React dependency conflicts during install
-        run: npm install --force
+        run: npm install
 
+      # Step 4: Build the React project, which generates the 'out' folder
       - name: 🏗 Build Project
+        # This assumes you have 'build' script defined in your package.json 
+        # that generates the static files into the 'out' directory.
         run: npm run build 
         
-      - name: 📂 Deploy to HostGator via SCP (Secure Copy Protocol)
-        # 💥 FINAL CRITICAL FIX: Switched to the reliable 'appleboy/scp-action'
-        # This uses the SSH protocol (Port 22), matching your cPanel environment.
+      # Step 5: Securely deploy the 'out' folder contents to HostGator using SCP
+      - name: 📂 Deploy 'out' folder contents to HostGator
+        # We use appleboy/scp-action for secure transfer via SSH/SCP (Port 22)
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          # Your SFTP/SSH Host Name (e.g., gospellanemedia.com)
+          host: ${{ secrets.HOSTGATOR_HOST }} 
           
-          # Use port 22 for SCP/SSH
+          # Your dedicated FTP Username (e.g., jrfansdeploy@jesusrevivalforallnations.com)
+          username: ${{ secrets.HOSTGATOR_USERNAME }}
+          
+          # Your FTP Password (stored securely in GitHub Secrets)
+          password: ${{ secrets.HOSTGATOR_PASSWORD }}
+          
+          # HostGator uses port 22 for secure SSH/SCP access
           port: 22
           
-          # Source files to deploy (the contents of the 'out' folder)
-          source: "./out/*"
+          # Source: Deploy ALL files and subfolders INSIDE the local 'out' directory
+          source: "./out/**" 
           
-          # Target path in your HostGator account
-          target: /home3/irineashu/jesusrevivalfans.com/
+          # Target: The specific live directory on your HostGator account
+          target: /home3/irineashu/jesusrevivalforallnations.com/
           
-          # Setting a high connection timeout just in case (in seconds)
+          # Command to clean the target directory before copying new files
+          # This prevents old, deleted files from remaining on the server.
+          rm: true 
+          
+          # Set a timeout for large transfers
           timeout: 120s
