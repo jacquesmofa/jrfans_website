@@ -7,7 +7,7 @@ export default function LeadershipSection() {
   const leaders = [
     {
       name: 'Pastor John Doe',
-      title: 'Founder & Lead Pastor',
+      title: 'Lead Pastor & Lead Pastor',
       image: 'https://jesusrevivalforallnations.com/wp-content/uploads/2024/12/IMG-20241216-WA0009-1024x768.jpg',
       bio: 'Pastor John Doe is a man of God with a burning passion for souls and revival. Called by God at a young age, he has dedicated his life to spreading the gospel across nations. With over 20 years of ministry experience, Pastor John has witnessed countless miracles, healings, and salvations. His powerful preaching and prophetic ministry have touched thousands of lives across Africa and beyond. He holds a degree in Theology and is known for his deep understanding of Scripture and his unwavering faith in the finished work of Christ.',
     },

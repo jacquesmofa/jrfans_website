@@ -10,9 +10,9 @@ export default function LeadershipProfilePage() {
   const leadershipProfiles: Record<string, any> = {
     'rev-dr-irine-ashu': {
       name: 'Rev Dr. Irine Ashu',
-      role: 'Founder & Lead Pastor',
+      role: 'Lead Pastor & Lead Pastor',
       image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%20and%20ministry%20leader%2C%20warm%20smile%2C%20spiritual%20authority%2C%20compassionate%20expression%2C%20church%20background%2C%20dignified%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader1&orientation=portrait',
-      bio: 'Rev. Dr. Irine Ashu is the visionary founder and lead pastor of Jesus Revival for All Nations. Called by God at the tender age of 8, she has dedicated her entire life to spreading the gospel and serving communities across nations.',
+      bio: 'Rev. Dr. Irine Ashu is the visionary Lead Pastor and lead pastor of Jesus Revival for All Nations. Called by God at the tender age of 8, she has dedicated her entire life to spreading the gospel and serving communities across nations.',
       fullStory: [
         'Rev. Dr. Irine Ashu\'s journey began in her childhood when she experienced a profound calling from God. At just 8 years old, during a church service, she told her father that Jesus was calling him. Her father\'s gentle response—"my daughter, you can answer Jesus if you want to"—changed her life forever.',
         'From that moment, she walked around telling God to send her and use her to reach many with His love and compassion. Her passion for ministry grew throughout her elementary, secondary, and high school years, where she ministered to peers, staff, and neighborhoods.',
