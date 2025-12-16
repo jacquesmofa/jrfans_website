@@ -3,7 +3,6 @@ name: Deploy JRFANS React App to HostGator
 on:
   push:
     branches:
-      # This workflow runs only when code is pushed to the 'main' branch
       - main 
 
 jobs:
@@ -27,7 +26,6 @@ jobs:
         run: npm run build 
         
       - name: 📂 Deploy 'out' folder contents to HostGator via FTP
-        # Uses the correct action for FTP deployment
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.HOSTGATOR_HOST }} 
@@ -35,17 +33,16 @@ jobs:
           password: ${{ secrets.HOSTGATOR_PASSWORD }}
           port: 21
           
-          # CRITICAL: local-dir targets the contents of your built folder
+          # Target the local build folder
           local-dir: out/
           
-          # CRITICAL FINAL FIX: Targets the FTP user's root directory, which is your website's folder
+          # Target the root of the FTP login
           server-dir: "" 
           
-          # FINAL FIX: Exclde the entire source code tree from sync.
-          # This bypasses the FTP 550 permission errors that crash the job 
-          # by preventing the tool from trying to delete these sensitive folders.
+          # Exclusions to prevent 550 errors and keep server clean
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
             src/** out/**
+            .htaccess.phpupgrader.*
