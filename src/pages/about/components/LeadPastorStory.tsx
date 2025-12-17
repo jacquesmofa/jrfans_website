@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-export default function Lead PastorSection() {
+export default function LeadPastorSection() {
   return (
     <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +39,7 @@ export default function Lead PastorSection() {
               <div className="absolute -bottom-6 -right-6 bg-accent-gold text-primary-900 p-6 rounded-lg shadow-xl">
                 <p className="font-display font-bold text-2xl">Rev.</p>
                 <p className="font-display font-black text-3xl">IRINE ASHU</p>
-                <p className="text-sm font-medium mt-1">PhD - Lead Pastor & Lead Pastor</p>
+                <p className="text-sm font-medium mt-1">PhD - Lead Pastor</p>
               </div>
             </div>
           </motion.div>

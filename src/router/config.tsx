@@ -7,7 +7,7 @@ const EventsPage = lazy(() => import('../pages/events/page'));
 const MediaPage = lazy(() => import('../pages/media/page'));
 const GivingPage = lazy(() => import('../pages/giving/page'));
 const ContactPage = lazy(() => import('../pages/contact/page'));
-const Lead PastorStoryPage = lazy(() => import('../pages/Lead Pastor-story/page'));
+const LeadPastorStoryPage = lazy(() => import('../pages/lead-pastor-story/page'));
 const LeadershipProfilePage = lazy(() => import('../pages/leadership/[slug]/page'));
 const ItemsDonationPage = lazy(() => import('../pages/giving/items-donation/page'));
 const VolunteerPage = lazy(() => import('../pages/giving/volunteer/page'));
@@ -47,8 +47,8 @@ const routes: RouteObject[] = [
     element: <ContactPage />,
   },
   {
-    path: '/Lead Pastor-story',
-    element: <Lead PastorStoryPage />,
+    path: '/lead-pastor-story',
+    element: <LeadPastorStoryPage />,
   },
   {
     path: '/leadership/:slug',
