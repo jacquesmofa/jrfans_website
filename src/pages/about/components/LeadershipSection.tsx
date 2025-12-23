@@ -6,13 +6,13 @@ export default function LeadershipSection() {
 
   const leaders = [
     {
-      name: 'Pastor John Doe',
-      title: 'Lead Pastor & Lead Pastor',
+      name: 'Rev. Irine Ashu',
+      title: 'Lead Pastor',
       image: 'https://jesusrevivalforallnations.com/wp-content/uploads/2024/12/IMG-20241216-WA0009-1024x768.jpg',
-      bio: 'Pastor John Doe is a man of God with a burning passion for souls and revival. Called by God at a young age, he has dedicated his life to spreading the gospel across nations. With over 20 years of ministry experience, Pastor John has witnessed countless miracles, healings, and salvations. His powerful preaching and prophetic ministry have touched thousands of lives across Africa and beyond. He holds a degree in Theology and is known for his deep understanding of Scripture and his unwavering faith in the finished work of Christ.',
+      bio: 'Rev. Irine Ashu is a man of God with a burning passion for souls and revival. Called by God at a young age, he has dedicated his life to spreading the gospel across nations. With over 20 years of ministry experience, Rev. Irine has witnessed countless miracles, healings, and salvations. His powerful preaching and prophetic ministry have touched thousands of lives across Africa and beyond. He holds a PhD in Theology and is known for his deep understanding of Scripture and his unwavering faith in the finished work of Christ.',
     },
     {
-      name: 'Pastor Jane Doe',
+      name: 'Pastor Jane Smith',
       title: 'Co-Pastor & Worship Leader',
       image: 'https://jesusrevivalforallnations.com/wp-content/uploads/2024/12/IMG-20241216-WA0010-1024x768.jpg',
       bio: 'Pastor Jane Doe is a gifted worship leader and teacher with a heart for intercession and spiritual warfare. She leads the worship team with excellence and has a unique anointing to usher people into the presence of God. Her ministry focuses on women empowerment, prayer, and discipleship. Together with Pastor John, she has built a strong foundation for JRFAN, emphasizing the importance of family, holiness, and passionate worship. Her teachings on faith and the love of God have transformed many lives.',

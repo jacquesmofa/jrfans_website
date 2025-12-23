@@ -3,6 +3,7 @@ import Footer from '../../components/feature/Footer';
 import StickyActionBar from '../../components/feature/StickyActionBar';
 import HeroSection from './components/HeroSection';
 import MissionVision from './components/MissionVision';
+import CommunityImpact from './components/CommunityImpact';
 import FeaturedSermon from './components/FeaturedSermon';
 import UpcomingCrusade from './components/UpcomingCrusade';
 import TestimonialSlider from './components/TestimonialSlider';
@@ -17,6 +18,7 @@ export default function HomePage() {
       <StickyActionBar />
       <HeroSection />
       <MissionVision />
+      <CommunityImpact />
       <FeaturedSermon />
       <UpcomingCrusade />
       <TestimonialSlider />

@@ -9,6 +9,7 @@ import PodcastSection from './components/PodcastSection';
 import MediaGallery from './components/MediaGallery';
 import DailyDevotion from './components/DailyDevotion';
 import BibleReadingPlan from './components/BibleReadingPlan';
+import ChurchAffirmation from './components/ChurchAffirmation';
 
 export default function MediaPage() {
   return (
@@ -22,6 +23,7 @@ export default function MediaPage() {
       <SermonGrid />
       <BibleReadingPlan />
       <MediaGallery />
+      <ChurchAffirmation />
       <PodcastSection />
       <Footer />
     </div>

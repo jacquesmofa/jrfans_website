@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-export default function Lead PastorStoryPage() {
+export default function FounderStoryPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-50">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://readdy.ai/api/search-image?query=open%20holy%20bible%20with%20divine%20light%20rays%20shining%20from%20pages%2C%20spiritual%20illumination%20and%20calling%2C%20God%20word%20bringing%20hope%20and%20direction%2C%20inspiring%20faith%20scene%2C%20ultra%20high%20definition%208k%20photography&width=1920&height=1080&seq=Lead Pastorstoryhero&orientation=landscape"
-            alt="Lead Pastor's Story Hero"
+            src="https://readdy.ai/api/search-image?query=open%20holy%20bible%20with%20divine%20light%20rays%20shining%20from%20pages%2C%20spiritual%20illumination%20and%20calling%2C%20God%20word%20bringing%20hope%20and%20direction%2C%20inspiring%20faith%20scene%2C%20ultra%20high%20definition%208k%20photography&width=1920&height=1080&seq=founderstoryhero&orientation=landscape"
+            alt="Founder Story Hero"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
@@ -57,7 +57,7 @@ export default function Lead PastorStoryPage() {
               <div className="flex flex-col md:flex-row gap-8 items-center mb-8">
                 <div className="w-64 h-64 rounded-full overflow-hidden shadow-xl flex-shrink-0">
                   <img
-                    src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%20and%20ministry%20leader%2C%20warm%20smile%2C%20spiritual%20authority%2C%20compassionate%20expression%2C%20church%20background%2C%20dignified%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=600&height=600&seq=Lead Pastorprofile&orientation=squarish"
+                    src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%20and%20ministry%20leader%2C%20warm%20smile%2C%20spiritual%20authority%2C%20compassionate%20expression%2C%20church%20background%2C%20dignified%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=600&height=600&seq=founderprofile&orientation=squarish"
                     alt="Rev. Irine Ashu, PhD"
                     className="w-full h-full object-cover"
                   />
@@ -69,14 +69,14 @@ export default function Lead PastorStoryPage() {
                   <h3 className="font-display font-bold text-3xl text-accent-fire mb-4">
                     Rev. IRINE ASHU, PhD
                   </h3>
-                  <p className="text-xl text-gray-600 font-medium">Lead Pastor & Lead Pastor</p>
+                  <p className="text-xl text-gray-600 font-medium">Founder & Lead Pastor</p>
                 </div>
               </div>
 
-              {/* The Lead Pastor Section */}
+              {/* The Founder Section */}
               <div className="prose prose-lg max-w-none">
                 <h3 className="font-display font-bold text-3xl text-primary-900 mb-6 border-b-4 border-accent-gold pb-3">
-                  The Lead Pastor
+                  The Founder
                 </h3>
 
                 <div className="bg-primary-50 p-6 rounded-lg mb-6">

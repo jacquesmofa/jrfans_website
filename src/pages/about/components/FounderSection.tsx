@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-export default function LeadPastorSection() {
+export default function FounderSection() {
   return (
     <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +31,7 @@ export default function LeadPastorSection() {
             <div className="relative">
               <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%20and%20ministry%20leader%2C%20warm%20smile%2C%20spiritual%20authority%2C%20compassionate%20expression%2C%20church%20background%2C%20dignified%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=600&height=800&seq=Lead Pastor1&orientation=portrait"
+                  src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%20and%20ministry%20leader%2C%20warm%20smile%2C%20spiritual%20authority%2C%20compassionate%20expression%2C%20church%20background%2C%20dignified%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=600&height=800&seq=founder1&orientation=portrait"
                   alt="Rev. Irine Ashu, PhD"
                   className="w-full h-full object-cover object-top"
                 />
@@ -80,7 +80,7 @@ export default function LeadPastorSection() {
                 </p>
                 
                 <Link
-                  to="/Lead Pastor-story"
+                  to="/founder-story"
                   className="inline-flex items-center bg-accent-fire hover:bg-accent-fire/90 text-white px-6 py-3 rounded-lg font-bold transition-all hover:scale-105 shadow-lg mt-4 cursor-pointer whitespace-nowrap"
                 >
                   Read More

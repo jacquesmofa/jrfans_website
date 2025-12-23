@@ -3,7 +3,7 @@ import Footer from '../../components/feature/Footer';
 import StickyActionBar from '../../components/feature/StickyActionBar';
 import AboutHero from './components/AboutHero';
 import HistoryVision from './components/HistoryVision';
-import Lead PastorSection from './components/Lead PastorSection';
+import FounderSection from './components/FounderSection';
 import CommunityServiceSection from './components/CommunityServiceSection';
 import GovernanceSection from './components/GovernanceSection';
 import BeliefsSection from './components/BeliefsSection';
@@ -17,7 +17,7 @@ export default function AboutPage() {
       <Navigation />
       <AboutHero />
       <HistoryVision />
-      <Lead PastorSection />
+      <FounderSection />
       <CommunityServiceSection />
       <GovernanceSection />
       <BeliefsSection />

@@ -10,9 +10,9 @@ export default function LeadershipProfilePage() {
   const leadershipProfiles: Record<string, any> = {
     'rev-dr-irine-ashu': {
       name: 'Rev Dr. Irine Ashu',
-      role: 'Lead Pastor & Lead Pastor',
+      role: 'Lead Pastor',
       image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%20and%20ministry%20leader%2C%20warm%20smile%2C%20spiritual%20authority%2C%20compassionate%20expression%2C%20church%20background%2C%20dignified%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=800&height=1000&seq=leader1&orientation=portrait',
-      bio: 'Rev. Dr. Irine Ashu is the visionary Lead Pastor and lead pastor of Jesus Revival for All Nations. Called by God at the tender age of 8, she has dedicated her entire life to spreading the gospel and serving communities across nations.',
+      bio: 'Rev. Dr. Irine Ashu is the visionary lead pastor of Jesus Revival for All Nations. Called by God at the tender age of 8, she has dedicated her entire life to spreading the gospel and serving communities across nations.',
       fullStory: [
         'Rev. Dr. Irine Ashu\'s journey began in her childhood when she experienced a profound calling from God. At just 8 years old, during a church service, she told her father that Jesus was calling him. Her father\'s gentle response—"my daughter, you can answer Jesus if you want to"—changed her life forever.',
         'From that moment, she walked around telling God to send her and use her to reach many with His love and compassion. Her passion for ministry grew throughout her elementary, secondary, and high school years, where she ministered to peers, staff, and neighborhoods.',
@@ -25,7 +25,7 @@ export default function LeadershipProfilePage() {
         'Thus, Jesus Revival for All Nations was born—a place where people find love, compassion, salvation, fellowship, comfort, and union with their Creator and Father.'
       ],
       achievements: [
-        'Founded Jesus Revival for All Nations',
+        'Lead Pastor of Jesus Revival for All Nations',
         'PhD in Ministry',
         'Master\'s Degree in Christian Counseling',
         'Bachelor\'s Degree in Christian Counseling',
@@ -56,7 +56,7 @@ export default function LeadershipProfilePage() {
         'With a background in business administration and nonprofit management, Brittley brings strategic thinking and operational excellence to JRFAN. Her leadership has been instrumental in expanding the church\'s community outreach programs, particularly the weekly food bank ministry.',
         'Brittley\'s heart for service was cultivated through years of volunteering in various community organizations. She witnessed firsthand the transformative power of combining practical assistance with spiritual ministry, which drew her to JRFAN\'s holistic approach to community service.',
         'Under her leadership, JRFAN has developed strong partnerships with local businesses, food suppliers, and community organizations, enabling the church to serve hundreds of families each week with dignity and compassion.',
-        'Brittley is known for her ability to mobilize volunteers, manage resources efficiently, and create systems that ensure sustainable impact. She works closely with Rev. Dr. Irine Ashu to implement the vision of reaching all nations with the gospel while meeting practical needs in the local community.',
+        'Brittley is known for her ability to mobilize volunteers, manage resources efficiently, and create systems that ensure sustainable impact. She works closely with Rev. Irine Ashu to implement the vision of reaching all nations with the gospel while meeting practical needs in the local community.',
         'Her commitment to excellence and her genuine love for people make her an invaluable leader in the JRFAN family. She believes that every person who walks through the church doors should experience the love of Christ through both word and deed.'
       ],
       achievements: [

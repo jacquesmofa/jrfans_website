@@ -7,7 +7,7 @@ export default function GovernanceSection() {
   const boardMembers = [
     {
       name: 'Rev Dr. Irine Ashu',
-      role: 'Lead Pastor & Lead Pastor',
+      role: 'Lead Pastor',
       image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%20and%20ministry%20leader%2C%20warm%20smile%2C%20spiritual%20authority%2C%20compassionate%20expression%2C%20church%20background%2C%20dignified%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=400&height=500&seq=board1&orientation=portrait',
       slug: 'rev-dr-irine-ashu'
     },

@@ -5,7 +5,10 @@ import { useInView } from 'react-intersection-observer';
 export default function MediaGallery() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [activeTab, setActiveTab] = useState<'photos' | 'videos'>('photos');
+  const [photosToShow, setPhotosToShow] = useState(8);
+  const [videosToShow, setVideosToShow] = useState(8);
 
+  // Expanded photo gallery - easily add more photos here
   const photos = [
     {
       url: 'https://readdy.ai/api/search-image?query=vibrant%20church%20worship%20service%20with%20raised%20hands%20praising%20God%2C%20diverse%20congregation%2C%20joyful%20atmosphere%2C%20modern%20church%20interior%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery1&orientation=landscape',
@@ -47,8 +50,49 @@ export default function MediaGallery() {
       title: 'Children\'s Ministry',
       date: 'Kids Program',
     },
+    {
+      url: 'https://readdy.ai/api/search-image?query=food%20bank%20volunteers%20distributing%20food%20packages%20to%20families%2C%20community%20service%2C%20helping%20neighbors%2C%20charity%20work%2C%20compassionate%20volunteers%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery9&orientation=landscape',
+      title: 'Food Bank Ministry',
+      date: 'Community Service',
+    },
+    {
+      url: 'https://readdy.ai/api/search-image?query=church%20seniors%20ministry%2C%20elderly%20people%20fellowship%2C%20warm%20gathering%2C%20intergenerational%20community%2C%20caring%20atmosphere%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery10&orientation=landscape',
+      title: 'Seniors Fellowship',
+      date: 'Ministry Event',
+    },
+    {
+      url: 'https://readdy.ai/api/search-image?query=church%20christmas%20celebration%20service%2C%20festive%20decorations%2C%20joyful%20congregation%2C%20holiday%20worship%2C%20special%20event%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery11&orientation=landscape',
+      title: 'Christmas Celebration',
+      date: 'Special Event',
+    },
+    {
+      url: 'https://readdy.ai/api/search-image?query=church%20easter%20sunrise%20service%2C%20outdoor%20worship%2C%20dawn%20celebration%2C%20resurrection%20joy%2C%20spiritual%20gathering%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery12&orientation=landscape',
+      title: 'Easter Service',
+      date: 'Special Service',
+    },
+    {
+      url: 'https://readdy.ai/api/search-image?query=church%20missions%20team%20preparing%20for%20outreach%2C%20volunteers%20organizing%20supplies%2C%20teamwork%2C%20dedication%2C%20mission%20preparation%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery13&orientation=landscape',
+      title: 'Missions Preparation',
+      date: 'Outreach Team',
+    },
+    {
+      url: 'https://readdy.ai/api/search-image?query=church%20womens%20ministry%20gathering%2C%20ladies%20fellowship%2C%20prayer%20circle%2C%20sisterhood%2C%20spiritual%20support%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery14&orientation=landscape',
+      title: 'Women\'s Ministry',
+      date: 'Fellowship',
+    },
+    {
+      url: 'https://readdy.ai/api/search-image?query=church%20mens%20ministry%20breakfast%2C%20men%20gathering%2C%20fellowship%20meal%2C%20brotherhood%2C%20spiritual%20growth%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery15&orientation=landscape',
+      title: 'Men\'s Ministry',
+      date: 'Fellowship Event',
+    },
+    {
+      url: 'https://readdy.ai/api/search-image?query=church%20small%20group%20bible%20study%2C%20intimate%20gathering%2C%20people%20studying%20scripture%20together%2C%20discussion%2C%20spiritual%20growth%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery16&orientation=landscape',
+      title: 'Small Group Study',
+      date: 'Weekly Meeting',
+    },
   ];
 
+  // Expanded video gallery - easily add more videos here
   const videos = [
     {
       thumbnail: 'https://readdy.ai/api/search-image?query=church%20worship%20service%20video%20thumbnail%2C%20dynamic%20worship%20scene%2C%20professional%20video%20production%2C%20engaging%20visual&width=800&height=450&seq=video1&orientation=landscape',
@@ -70,7 +114,40 @@ export default function MediaGallery() {
       title: 'Worship Sessions',
       duration: '18:20',
     },
+    {
+      thumbnail: 'https://readdy.ai/api/search-image?query=food%20bank%20distribution%20video%20thumbnail%2C%20volunteers%20serving%20families%2C%20community%20outreach%2C%20charity%20work&width=800&height=450&seq=video5&orientation=landscape',
+      title: 'Food Bank Outreach',
+      duration: '10:30',
+    },
+    {
+      thumbnail: 'https://readdy.ai/api/search-image?query=church%20baptism%20ceremony%20video%20thumbnail%2C%20water%20baptism%20celebration%2C%20spiritual%20milestone%2C%20joyful%20moment&width=800&height=450&seq=video6&orientation=landscape',
+      title: 'Baptism Services',
+      duration: '14:20',
+    },
+    {
+      thumbnail: 'https://readdy.ai/api/search-image?query=church%20youth%20ministry%20video%20thumbnail%2C%20young%20people%20worship%2C%20energetic%20praise%2C%20youth%20event&width=800&height=450&seq=video7&orientation=landscape',
+      title: 'Youth Ministry Moments',
+      duration: '16:45',
+    },
+    {
+      thumbnail: 'https://readdy.ai/api/search-image?query=church%20missions%20trip%20video%20thumbnail%2C%20outreach%20team%20serving%2C%20international%20mission%2C%20community%20impact&width=800&height=450&seq=video8&orientation=landscape',
+      title: 'Missions Trip Recap',
+      duration: '22:10',
+    },
   ];
+
+  const loadMorePhotos = () => {
+    setPhotosToShow(prev => prev + 8);
+  };
+
+  const loadMoreVideos = () => {
+    setVideosToShow(prev => prev + 8);
+  };
+
+  const displayedPhotos = photos.slice(0, photosToShow);
+  const displayedVideos = videos.slice(0, videosToShow);
+  const hasMorePhotos = photosToShow < photos.length;
+  const hasMoreVideos = videosToShow < videos.length;
 
   return (
     <section ref={ref} className="py-24 bg-gradient-to-b from-white to-primary-50">
@@ -97,7 +174,7 @@ export default function MediaGallery() {
               }`}
             >
               <i className="ri-image-fill mr-2"></i>
-              Photos
+              Photos ({photos.length})
             </button>
             <button
               onClick={() => setActiveTab('videos')}
@@ -108,88 +185,132 @@ export default function MediaGallery() {
               }`}
             >
               <i className="ri-video-fill mr-2"></i>
-              Videos
+              Videos ({videos.length})
             </button>
           </div>
         </motion.div>
 
         {activeTab === 'photos' && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {photos.map((photo, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer"
-              >
-                <div className="w-full h-64">
-                  <img
-                    src={photo.url}
-                    alt={photo.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                    <h3 className="font-bold text-lg mb-1">{photo.title}</h3>
-                    <p className="text-sm text-white/80">{photo.date}</p>
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {displayedPhotos.map((photo, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer"
+                >
+                  <div className="w-full h-64">
+                    <img
+                      src={photo.url}
+                      alt={photo.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                    />
                   </div>
-                </div>
-                <div className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                  <i className="ri-zoom-in-line text-white text-xl"></i>
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <h3 className="font-bold text-lg mb-1">{photo.title}</h3>
+                      <p className="text-sm text-white/80">{photo.date}</p>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i className="ri-zoom-in-line text-white text-xl"></i>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {hasMorePhotos && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mt-12 text-center"
+              >
+                <button
+                  onClick={loadMorePhotos}
+                  className="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white px-10 py-4 rounded-lg font-bold transition-all hover:scale-105 shadow-lg whitespace-nowrap cursor-pointer"
+                >
+                  <i className="ri-add-circle-line mr-2 text-xl"></i>
+                  Load More Photos
+                  <span className="ml-2 text-sm opacity-90">
+                    ({photos.length - photosToShow} remaining)
+                  </span>
+                </button>
               </motion.div>
-            ))}
-          </motion.div>
+            )}
+          </>
         )}
 
         {activeTab === 'videos' && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {videos.map((video, index) => (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {displayedVideos.map((video, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer"
+                >
+                  <div className="w-full h-64">
+                    <img
+                      src={video.thumbnail}
+                      alt={video.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 flex items-center justify-center bg-white/90 rounded-full group-hover:scale-110 transition-transform">
+                        <i className="ri-play-fill text-3xl text-primary-600"></i>
+                      </div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <h3 className="font-bold text-lg mb-1">{video.title}</h3>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-white/80">
+                          <i className="ri-time-line mr-1"></i>
+                          {video.duration}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {hasMoreVideos && (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mt-12 text-center"
               >
-                <div className="w-full h-64">
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 flex items-center justify-center bg-white/90 rounded-full group-hover:scale-110 transition-transform">
-                      <i className="ri-play-fill text-3xl text-primary-600"></i>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                    <h3 className="font-bold text-lg mb-1">{video.title}</h3>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-white/80">
-                        <i className="ri-time-line mr-1"></i>
-                        {video.duration}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <button
+                  onClick={loadMoreVideos}
+                  className="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white px-10 py-4 rounded-lg font-bold transition-all hover:scale-105 shadow-lg whitespace-nowrap cursor-pointer"
+                >
+                  <i className="ri-add-circle-line mr-2 text-xl"></i>
+                  Load More Videos
+                  <span className="ml-2 text-sm opacity-90">
+                    ({videos.length - videosToShow} remaining)
+                  </span>
+                </button>
               </motion.div>
-            ))}
-          </motion.div>
+            )}
+          </>
         )}
 
         <motion.div
