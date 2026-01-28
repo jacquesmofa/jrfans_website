@@ -31,15 +31,15 @@ export default function FounderSection() {
             <div className="relative">
               <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%20and%20ministry%20leader%2C%20warm%20smile%2C%20spiritual%20authority%2C%20compassionate%20expression%2C%20church%20background%2C%20dignified%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=600&height=800&seq=founder1&orientation=portrait"
-                  alt="Rev. Irine Ashu, PhD"
-                  className="w-full h-full object-cover object-top"
+                  src="https://static.readdy.ai/image/2e117e8c7ffa34e61699363cecaf86d3/d23a6cfdd25c1be48aac363c8f4007e7.png"
+                  alt="Rev. Dr. Irine Ashu"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-accent-gold text-primary-900 p-6 rounded-lg shadow-xl">
-                <p className="font-display font-bold text-2xl">Rev.</p>
+                <p className="font-display font-bold text-2xl">Rev. Dr.</p>
                 <p className="font-display font-black text-3xl">IRINE ASHU</p>
-                <p className="text-sm font-medium mt-1">PhD - Lead Pastor</p>
+                <p className="text-sm font-medium mt-1">Lead Pastor</p>
               </div>
             </div>
           </motion.div>

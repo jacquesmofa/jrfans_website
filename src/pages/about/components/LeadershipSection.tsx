@@ -8,7 +8,7 @@ export default function LeadershipSection() {
     {
       name: 'Rev. Irine Ashu',
       title: 'Lead Pastor',
-      image: 'https://jesusrevivalforallnations.com/wp-content/uploads/2024/12/IMG-20241216-WA0009-1024x768.jpg',
+      image: 'https://i.imgur.com/rpnEKiQ.png',
       bio: 'Rev. Irine Ashu is a man of God with a burning passion for souls and revival. Called by God at a young age, he has dedicated his life to spreading the gospel across nations. With over 20 years of ministry experience, Rev. Irine has witnessed countless miracles, healings, and salvations. His powerful preaching and prophetic ministry have touched thousands of lives across Africa and beyond. He holds a PhD in Theology and is known for his deep understanding of Scripture and his unwavering faith in the finished work of Christ.',
     },
     {

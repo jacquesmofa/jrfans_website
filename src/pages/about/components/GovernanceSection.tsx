@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,7 +9,7 @@ export default function GovernanceSection() {
     {
       name: 'Rev Dr. Irine Ashu',
       role: 'Lead Pastor',
-      image: 'https://readdy.ai/api/search-image?query=professional%20portrait%20of%20African%20woman%20pastor%20and%20ministry%20leader%2C%20warm%20smile%2C%20spiritual%20authority%2C%20compassionate%20expression%2C%20church%20background%2C%20dignified%20and%20inspiring%2C%20ultra%20high%20definition%20photography&width=400&height=500&seq=board1&orientation=portrait',
+      image: 'https://i.imgur.com/rpnEKiQ.png',
       slug: 'rev-dr-irine-ashu'
     },
     {
@@ -98,7 +99,7 @@ export default function GovernanceSection() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
