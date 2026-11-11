@@ -38,7 +38,7 @@ export default function CommunityImpact() {
       title: 'Weekly Food Bank',
       description: 'Every Wednesday & Friday, we distribute fresh groceries, produce, and essential supplies to families in need across Brampton.',
       icon: 'ri-restaurant-fill',
-      image: 'https://readdy.ai/api/search-image?query=volunteers%20at%20busy%20food%20bank%20in%20Brampton%20distributing%20fresh%20vegetables%20fruits%20and%20groceries%20to%20diverse%20families%2C%20organized%20food%20distribution%20with%20volunteers%20helping%20people%20select%20items%2C%20warm%20welcoming%20atmosphere%2C%20community%20members%20receiving%20food%20with%20gratitude%2C%20ultra%20high%20definition%208K%20photography&width=800&height=600&seq=foodbank-program1&orientation=landscape',
+      image: 'https://res.cloudinary.com/hxhakwbe/image/upload/f_auto,q_auto,c_fill,g_auto,w_800,h_600/v1794428507/WhatsApp_Image_2026-11-08_at_18.45.56_zx5a03.jpg',
       schedule: 'Wed & Fri, 6:00 PM - 8:00 PM'
     },
     {
