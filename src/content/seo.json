@@ -1,0 +1,120 @@
+{
+  "_help": "Page titles, Google descriptions and share pictures (Facebook, WhatsApp, LinkedIn, X). Used in the browser by src/components/feature/SeoSync.tsx and at build time by scripts/social-pages.mjs (one static page per address + sitemap.xml). Share cards: public/social/*.jpg. Titles under 65 characters, descriptions 120-160.",
+  "site": {
+    "name": "Jesus Revival for All Nations",
+    "url": "https://jesusrevivalforallnations.com",
+    "locale": "en_CA",
+    "image": "https://jesusrevivalforallnations.com/social/home.jpg",
+    "imageAlt": "Jesus Revival for All Nations, Brampton: a place of revival for all nations"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "title": "Jesus Revival for All Nations | Brampton Church & Food Bank",
+      "description": "A Brampton church led by Rev. Dr. Irine Ashu: a home for worship, restoration and fellowship, with a food bank ministry serving 500+ people every week.",
+      "image": "https://jesusrevivalforallnations.com/social/home.jpg"
+    },
+    {
+      "path": "/about",
+      "title": "About Us | Jesus Revival for All Nations, Brampton",
+      "description": "Who we are: a Brampton church where people of every nation find love, compassion, salvation, fellowship and union with their Creator.",
+      "image": "https://jesusrevivalforallnations.com/social/about.jpg"
+    },
+    {
+      "path": "/events",
+      "title": "Events & Services | Jesus Revival for All Nations",
+      "description": "Join us for powerful worship, inspiring messages and fellowship in Brampton. Experience the presence of God as we gather together.",
+      "image": "https://jesusrevivalforallnations.com/social/events.jpg"
+    },
+    {
+      "path": "/media",
+      "title": "Media: Sermons & Worship | Jesus Revival for All Nations",
+      "description": "Sermons, worship and moments from Jesus Revival for All Nations in Brampton. Faith comes from hearing the message about Christ.",
+      "image": "https://jesusrevivalforallnations.com/social/media.jpg"
+    },
+    {
+      "path": "/giving",
+      "title": "Giving | Jesus Revival for All Nations",
+      "description": "Support the operations, programs and outreach of Jesus Revival for All Nations, including the food bank ministry serving our Brampton neighbours.",
+      "image": "https://jesusrevivalforallnations.com/social/giving.jpg"
+    },
+    {
+      "path": "/giving/items-donation",
+      "title": "Donate Items | Jesus Revival for All Nations",
+      "description": "Help equip the ministry: donated equipment and essential items expand our reach, improve worship and help us serve our community better.",
+      "image": "https://jesusrevivalforallnations.com/social/items.jpg"
+    },
+    {
+      "path": "/giving/volunteer",
+      "title": "Volunteer | Jesus Revival for All Nations",
+      "description": "Use your gifts to serve God and your community: worship, serving families, youth, the food bank and more at Jesus Revival for All Nations.",
+      "image": "https://jesusrevivalforallnations.com/social/volunteer.jpg"
+    },
+    {
+      "path": "/contact",
+      "title": "Contact Us | Jesus Revival for All Nations, Brampton",
+      "description": "Get in touch with Jesus Revival for All Nations in Brampton. Send us a message and we will respond as soon as possible.",
+      "image": "https://jesusrevivalforallnations.com/social/contact.jpg"
+    },
+    {
+      "path": "/founder-story",
+      "title": "Founder's Story: Rev. Dr. Irine Ashu | JRFAN",
+      "description": "Called by God as a child in Cameroon, Rev. Dr. Irine Ashu followed that call to Canada and founded Jesus Revival for All Nations.",
+      "image": "https://jesusrevivalforallnations.com/social/founder.jpg"
+    },
+    {
+      "path": "/leadership/rev-dr-irine-ashu",
+      "title": "Rev Dr. Irine Ashu, Lead Pastor | JRFAN",
+      "description": "Rev. Dr. Irine Ashu is the visionary lead pastor of Jesus Revival for All Nations. Called by God at the tender age of 8, she has dedicated her entire life…",
+      "image": "https://jesusrevivalforallnations.com/social/founder.jpg"
+    },
+    {
+      "path": "/leadership/brittley-mokube",
+      "title": "Brittley Mokube, Executive Director | JRFAN",
+      "description": "Brittley Mokube serves as the Executive Director of JRFAN, bringing exceptional organizational leadership and a heart for community transformation.",
+      "image": "https://jesusrevivalforallnations.com/social/leadership.jpg"
+    },
+    {
+      "path": "/leadership/pastor-kevin-eemeka",
+      "title": "Pastor Kevin Eemeka, Board Member & Associate Pastor | JRFAN",
+      "description": "Pastor Kevin Eemeka is a devoted servant of God with a powerful teaching ministry and a heart for discipleship and spiritual growth.",
+      "image": "https://jesusrevivalforallnations.com/social/leadership.jpg"
+    },
+    {
+      "path": "/leadership/pastor-collette-tanyi",
+      "title": "Pastor Collette Tanyi, Board Member & Women's Ministry Leader | JRFAN",
+      "description": "Pastor Collette Tanyi is a passionate women's ministry leader with a heart for prayer, intercession, and empowering women to fulfill their God-given purpose.",
+      "image": "https://jesusrevivalforallnations.com/social/leadership.jpg"
+    },
+    {
+      "path": "/leadership/pastor-bill-jay",
+      "title": "Pastor Bill Jay The Psalmist, Worship Leader & Board Member | JRFAN",
+      "description": "Pastor Bill Jay is an anointed worship leader and psalmist who leads the congregation into powerful encounters with God through worship and praise.",
+      "image": "https://jesusrevivalforallnations.com/social/leadership.jpg"
+    },
+    {
+      "path": "/leadership/nicole-ashu",
+      "title": "Nicole Ashu, Board Member & Youth Ministry Coordinator | JRFAN",
+      "description": "Nicole Ashu is a passionate young leader dedicated to reaching and discipling the next generation for Christ through innovative youth ministry programs.",
+      "image": "https://jesusrevivalforallnations.com/social/leadership.jpg"
+    },
+    {
+      "path": "/leadership/serah-achi",
+      "title": "Serah Achi, Board Member & Community Outreach Director | JRFAN",
+      "description": "Serah Achi is a compassionate leader who oversees JRFAN's community outreach initiatives, ensuring that the love of Christ reaches every corner of Brampton.",
+      "image": "https://jesusrevivalforallnations.com/social/leadership.jpg"
+    },
+    {
+      "path": "/leadership/jude-anoma",
+      "title": "Jude Anoma, Board Member & Financial Steward | JRFAN",
+      "description": "Jude Anoma brings financial expertise and integrity to JRFAN's leadership, ensuring responsible stewardship of resources for maximum kingdom impact.",
+      "image": "https://jesusrevivalforallnations.com/social/leadership.jpg"
+    },
+    {
+      "path": "/leadership/minister-marie",
+      "title": "Minister Marie, Board Member & Children's Ministry Director | JRFAN",
+      "description": "Minister Marie is a dedicated children's ministry leader who believes in laying strong spiritual foundations in the hearts of young children.",
+      "image": "https://jesusrevivalforallnations.com/social/leadership.jpg"
+    }
+  ]
+}

@@ -36,7 +36,7 @@
   "name": "react",
   "private": true,
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && node scripts/social-pages.mjs",
     "dev": "vite",
     "preview": "vite preview"
   },

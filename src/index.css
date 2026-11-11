@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Decorative badges and slide-in animations must never make phones scroll sideways. */
+html,
+body {
+  overflow-x: clip;
+}

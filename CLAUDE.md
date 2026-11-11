@@ -2,7 +2,7 @@
 
 Brampton church led by Rev. Irine Ashu, with a food bank ministry serving 500+ people weekly.
 
-- Live domain: jesusrevivalforallnations.com (found in code; confirm)
+- Live domain: https://jesusrevivalforallnations.com (live and verified 11 Nov 2026; the old canonical jrfanscommunity.com was replaced everywhere)
 - Host: HostGator
 - Design and audience: see `brand-dna.md`. Placeholders: `PLACEHOLDERS.md` (create it when you find one).
 
@@ -23,6 +23,11 @@ Brampton church led by Rev. Irine Ashu, with a food bank ministry serving 500+ p
 
 ## Deploy
 - `.github/workflows/deploy.yml`: push to `main` → build → FTP (secrets `HOSTGATOR_HOST`, `HOSTGATOR_USERNAME`, `HOSTGATOR_PASSWORD`).
+
+## Share previews and SEO (11 Nov 2026)
+- `src/content/seo.json`: title, description and share picture for all 18 addresses (9 pages + 9 leadership profiles). `SeoSync.tsx` applies it in the browser; `scripts/social-pages.mjs` (inside `npm run build`) writes one static page per address into `out/` plus `sitemap.xml`, so Facebook, WhatsApp, LinkedIn and X show the right preview.
+- Share cards `public/social/*.jpg` (indigo/gold, cross rising from a flame, Montserrat + Inter) and app icons `public/icon-*.png` replace the Readdy placeholders. No JRFAN-owned photos exist yet (the food bank section uses YOFOAM photos), so cards are used instead of photos.
+- `public/.htaccess`: https, clean addresses (a page and a folder can share a name: /giving and /giving/volunteer), per-page files, SPA fallback, caching.
 
 ## Where things live
 - Pages: `src/pages/<page>/` (one folder per page, sections in `components/`). Routes: `src/router/`.

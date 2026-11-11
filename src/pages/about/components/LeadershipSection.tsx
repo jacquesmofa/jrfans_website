@@ -9,7 +9,7 @@ export default function LeadershipSection() {
       name: 'Rev. Irine Ashu',
       title: 'Lead Pastor',
       image: 'https://i.imgur.com/rpnEKiQ.png',
-      bio: 'Rev. Irine Ashu is a man of God with a burning passion for souls and revival. Called by God at a young age, he has dedicated his life to spreading the gospel across nations. With over 20 years of ministry experience, Rev. Irine has witnessed countless miracles, healings, and salvations. His powerful preaching and prophetic ministry have touched thousands of lives across Africa and beyond. He holds a PhD in Theology and is known for his deep understanding of Scripture and his unwavering faith in the finished work of Christ.',
+      bio: 'Rev. Irine Ashu is a woman of God with a burning passion for souls and revival. Called by God at a young age, she has dedicated her life to spreading the gospel across nations. With over 20 years of ministry experience, Rev. Irine has witnessed countless miracles, healings, and salvations. Her powerful preaching and prophetic ministry have touched thousands of lives across Africa and beyond. She holds a PhD in Theology and is known for her deep understanding of Scripture and her unwavering faith in the finished work of Christ.',
     },
     {
       name: 'Pastor Jane Smith',
