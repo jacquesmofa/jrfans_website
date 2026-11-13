@@ -1,0 +1,108 @@
+{
+  "albums": [
+    {
+      "slug": "food-bank",
+      "title": "Food Bank Ministry",
+      "description": "Volunteers and families at the food bank, serving neighbours every week.",
+      "alt": "Food bank ministry volunteers and families",
+      "photos": [
+        {
+          "src": "https://res.cloudinary.com/hxhakwbe/image/upload/v1794428474/WhatsApp_Image_2026-11-08_at_18.45.55_isiqm7.jpg"
+        },
+        {
+          "src": "https://res.cloudinary.com/hxhakwbe/image/upload/v1794428475/WhatsApp_Image_2026-11-08_at_18.45.56_1_zbt3iy.jpg"
+        },
+        {
+          "src": "https://res.cloudinary.com/hxhakwbe/image/upload/v1794428479/WhatsApp_Image_2026-11-08_at_18.45.56_6_ozgdq6.jpg"
+        },
+        {
+          "src": "https://res.cloudinary.com/hxhakwbe/image/upload/v1794428488/WhatsApp_Image_2026-11-08_at_18.45.57_xa5kmm.jpg"
+        },
+        {
+          "src": "https://res.cloudinary.com/hxhakwbe/image/upload/v1794428488/WhatsApp_Image_2026-11-08_at_18.45.58_fmpcgw.jpg"
+        },
+        {
+          "src": "https://res.cloudinary.com/hxhakwbe/image/upload/v1794428501/WhatsApp_Image_2026-11-08_at_18.45.59_ane7je.jpg"
+        },
+        {
+          "src": "https://res.cloudinary.com/hxhakwbe/image/upload/v1794428505/WhatsApp_Image_2026-11-08_at_18.45.59_1_o5ubxm.jpg"
+        },
+        {
+          "src": "https://res.cloudinary.com/hxhakwbe/image/upload/v1794428507/WhatsApp_Image_2026-11-08_at_18.45.56_zx5a03.jpg"
+        }
+      ]
+    },
+    {
+      "slug": "church-life",
+      "title": "Church Life",
+      "description": "Worship, fellowship and ministry moments.",
+      "alt": "Church life",
+      "photos": [
+        {
+          "src": "https://readdy.ai/api/search-image?query=vibrant%20church%20worship%20service%20with%20raised%20hands%20praising%20God%2C%20diverse%20congregation%2C%20joyful%20atmosphere%2C%20modern%20church%20interior%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery1&orientation=landscape",
+          "alt": "Sunday Worship Service"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20community%20fellowship%20gathering%2C%20people%20sharing%20meals%20together%2C%20warm%20atmosphere%2C%20diverse%20group%2C%20love%20and%20unity%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery2&orientation=landscape",
+          "alt": "Community Fellowship"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20baptism%20ceremony%2C%20water%20baptism%2C%20spiritual%20celebration%2C%20joyful%20moment%2C%20congregation%20witnessing%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery3&orientation=landscape",
+          "alt": "Baptism Celebration"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20youth%20group%20worship%2C%20young%20people%20praising%20God%2C%20energetic%20worship%2C%20modern%20church%20setting%2C%20inspiring%20atmosphere%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery4&orientation=landscape",
+          "alt": "Youth Ministry"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20prayer%20meeting%2C%20people%20praying%20together%2C%20hands%20joined%20in%20prayer%2C%20spiritual%20atmosphere%2C%20intimate%20gathering%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery5&orientation=landscape",
+          "alt": "Prayer Meeting"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20outreach%20program%2C%20community%20service%2C%20helping%20people%2C%20charity%20work%2C%20volunteers%20serving%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery6&orientation=landscape",
+          "alt": "Community Outreach"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20worship%20team%20rehearsal%2C%20musicians%20practicing%2C%20band%20members%2C%20modern%20worship%20instruments%2C%20dedication%20and%20passion%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery7&orientation=landscape",
+          "alt": "Worship Team"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20childrens%20ministry%2C%20kids%20learning%20bible%20stories%2C%20sunday%20school%2C%20joyful%20children%2C%20teachers%20engaging%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery8&orientation=landscape",
+          "alt": "Children's Ministry"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=food%20bank%20volunteers%20distributing%20food%20packages%20to%20families%2C%20community%20service%2C%20helping%20neighbors%2C%20charity%20work%2C%20compassionate%20volunteers%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery9&orientation=landscape",
+          "alt": "Food Bank Ministry"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20seniors%20ministry%2C%20elderly%20people%20fellowship%2C%20warm%20gathering%2C%20intergenerational%20community%2C%20caring%20atmosphere%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery10&orientation=landscape",
+          "alt": "Seniors Fellowship"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20christmas%20celebration%20service%2C%20festive%20decorations%2C%20joyful%20congregation%2C%20holiday%20worship%2C%20special%20event%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery11&orientation=landscape",
+          "alt": "Christmas Celebration"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20easter%20sunrise%20service%2C%20outdoor%20worship%2C%20dawn%20celebration%2C%20resurrection%20joy%2C%20spiritual%20gathering%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery12&orientation=landscape",
+          "alt": "Easter Service"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20missions%20team%20preparing%20for%20outreach%2C%20volunteers%20organizing%20supplies%2C%20teamwork%2C%20dedication%2C%20mission%20preparation%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery13&orientation=landscape",
+          "alt": "Missions Preparation"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20womens%20ministry%20gathering%2C%20ladies%20fellowship%2C%20prayer%20circle%2C%20sisterhood%2C%20spiritual%20support%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery14&orientation=landscape",
+          "alt": "Women's Ministry"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20mens%20ministry%20breakfast%2C%20men%20gathering%2C%20fellowship%20meal%2C%20brotherhood%2C%20spiritual%20growth%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery15&orientation=landscape",
+          "alt": "Men's Ministry"
+        },
+        {
+          "src": "https://readdy.ai/api/search-image?query=church%20small%20group%20bible%20study%2C%20intimate%20gathering%2C%20people%20studying%20scripture%20together%2C%20discussion%2C%20spiritual%20growth%2C%20professional%20photography%20ultra%20hd&width=800&height=600&seq=gallery16&orientation=landscape",
+          "alt": "Small Group Study"
+        }
+      ]
+    }
+  ]
+}

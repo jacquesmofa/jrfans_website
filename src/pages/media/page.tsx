@@ -19,8 +19,11 @@ export default function MediaPage() {
       <MediaHero />
       <DailyDevotion />
       <LiveStreamSection />
-      <SermonFilters />
-      <SermonGrid />
+      {/* Wrapper so the sticky sermon filters stop at the end of the sermon list */}
+      <div>
+        <SermonFilters />
+        <SermonGrid />
+      </div>
       <BibleReadingPlan />
       <MediaGallery />
       <ChurchAffirmation />
