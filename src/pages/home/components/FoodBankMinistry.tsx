@@ -25,7 +25,7 @@ const receive = [
   'Recognition in services, events and on our channels',
 ];
 
-/** Food Bank Ministry: the case for funders and partners, with real photos from distribution day. */
+/** Food Bank Ministry: the case for donors and partners, with real photos from distribution day. */
 export default function FoodBankMinistry() {
   const [lead, ...rest] = foodBank.photos;
   return (
@@ -34,7 +34,7 @@ export default function FoodBankMinistry() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-amber-400 font-semibold tracking-[0.25em] uppercase text-xs">Food Bank Ministry · For funders &amp; partners</p>
+            <p className="text-amber-400 font-semibold tracking-[0.25em] uppercase text-xs">Food Bank Ministry · For donors &amp; partners</p>
             <h2 className="mt-5 text-4xl md:text-5xl font-extrabold leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               Feeding families. <span className="text-amber-400">Restoring hope.</span>
             </h2>
@@ -45,9 +45,9 @@ export default function FoodBankMinistry() {
               Every week our food bank ministry serves families across Brampton with fresh groceries, produce and essential supplies. It is faith in action: practical, generous and open to all. With partners beside us, we can keep the shelves full as the need keeps growing.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/giving" className="px-7 py-3.5 rounded-full bg-amber-400 text-indigo-950 font-bold hover:bg-amber-300 transition-colors whitespace-nowrap">Fund the food bank</Link>
+              <Link to="/giving" className="px-7 py-3.5 rounded-full bg-amber-400 text-indigo-950 font-bold hover:bg-amber-300 transition-colors whitespace-nowrap">Donate to the food bank</Link>
               <Link to="/giving/volunteer" className="px-7 py-3.5 rounded-full border-2 border-white/40 font-bold hover:bg-white/10 transition-colors whitespace-nowrap">Volunteer</Link>
-              <a href={`mailto:${EMAIL}?subject=${encodeURIComponent('Food bank funding package request')}`} className="px-2 py-3.5 font-bold text-amber-300 underline-offset-4 hover:underline whitespace-nowrap">Request a funding package</a>
+              <a href={`mailto:${EMAIL}?subject=${encodeURIComponent('Food bank donor package request')}`} className="px-2 py-3.5 font-bold text-amber-300 underline-offset-4 hover:underline whitespace-nowrap">Request a donor package</a>
             </div>
           </div>
           <div className="grid grid-cols-3 gap-3">
@@ -70,13 +70,13 @@ export default function FoodBankMinistry() {
 
         <div className="mt-10 grid lg:grid-cols-2 gap-6">
           <div className="rounded-3xl bg-white text-indigo-950 p-8">
-            <h3 className="text-2xl font-extrabold">What your grant makes possible</h3>
+            <h3 className="text-2xl font-extrabold">What your donation makes possible</h3>
             <ul className="mt-5 space-y-3 list-none p-0">
               {fund.map((f) => <li key={f} className="flex gap-3"><i className="ri-restaurant-fill text-red-600 mt-0.5" aria-hidden="true" />{f}</li>)}
             </ul>
           </div>
           <div className="rounded-3xl border-2 border-amber-400/60 bg-amber-400/10 p-8">
-            <h3 className="text-2xl font-extrabold">What funders receive</h3>
+            <h3 className="text-2xl font-extrabold">What donors receive</h3>
             <ul className="mt-5 space-y-3 list-none p-0">
               {receive.map((r) => <li key={r} className="flex gap-3 text-indigo-50"><i className="ri-checkbox-circle-fill text-amber-400 mt-0.5" aria-hidden="true" />{r}</li>)}
             </ul>
