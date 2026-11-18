@@ -8,42 +8,36 @@ export default function OutreachGallery() {
     {
       title: 'Street Evangelism',
       location: 'Downtown Brampton',
-      date: 'December 2024',
       image: 'https://jesusrevivalforallnations.com/wp-content/uploads/2024/12/IMG-20241216-WA0009-1024x768.jpg',
       description: 'Sharing the gospel and distributing food to the homeless and needy in downtown Brampton.',
     },
     {
       title: 'Prison Ministry',
       location: 'Toronto South Detention Centre',
-      date: 'November 2024',
       image: 'https://jesusrevivalforallnations.com/wp-content/uploads/2024/12/IMG-20241216-WA0010-1024x768.jpg',
       description: 'Bringing hope and salvation to inmates through worship, preaching, and counseling.',
     },
     {
       title: 'Hospital Visitation',
       location: 'Brampton Civic Hospital',
-      date: 'November 2024',
       image: 'https://jesusrevivalforallnations.com/wp-content/uploads/2024/12/IMG-20241216-WA0011-1024x768.jpg',
       description: 'Praying for the sick, encouraging patients, and sharing God\'s love with hospital staff.',
     },
     {
       title: 'School Outreach',
       location: 'Local Brampton Schools',
-      date: 'October 2024',
       image: 'https://jesusrevivalforallnations.com/wp-content/uploads/2024/12/IMG-20241216-WA0012-1024x768.jpg',
       description: 'Teaching students about faith, character, and purpose through interactive sessions.',
     },
     {
       title: 'Community Outreach',
       location: 'Brampton & Mississauga',
-      date: 'September 2024',
       image: 'https://jesusrevivalforallnations.com/wp-content/uploads/2024/12/IMG-20241216-WA0013-1024x768.jpg',
       description: 'Taking the gospel to local communities with care packages, food distribution, and preaching.',
     },
     {
       title: 'Community Clean-Up',
       location: 'Brampton Neighborhoods',
-      date: 'August 2024',
       image: 'https://jesusrevivalforallnations.com/wp-content/uploads/2024/12/IMG-20241216-WA0014-1024x768.jpg',
       description: 'Serving the community by cleaning streets and public spaces while sharing God\'s love.',
     },
@@ -87,17 +81,7 @@ export default function OutreachGallery() {
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-600 leading-relaxed mb-4">{outreach.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500 flex items-center">
-                    <i className="ri-calendar-line mr-1"></i>
-                    {outreach.date}
-                  </span>
-                  <button className="text-primary-600 hover:text-primary-700 font-semibold text-sm flex items-center cursor-pointer">
-                    View Gallery
-                    <i className="ri-arrow-right-line ml-1"></i>
-                  </button>
-                </div>
+                <p className="text-gray-600 leading-relaxed">{outreach.description}</p>
               </div>
             </motion.div>
           ))}
